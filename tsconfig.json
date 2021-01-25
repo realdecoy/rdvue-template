@@ -19,6 +19,9 @@
     "paths": {
       "@/*": [
         "src/*"
+      ],
+      ".rdvue/*": [
+        ".rdvue/*"
       ]
     },
     "lib": [
@@ -33,7 +36,9 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",
-    "tests/**/*.tsx"
+    "tests/**/*.tsx",
+    ".rdvue/**/*.ts",
+    ".rdvue/**/*.js"
   ],
   "exclude": [
     "node_modules"

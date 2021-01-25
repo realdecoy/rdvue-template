@@ -1,7 +1,7 @@
 <script lang="ts">
 import { PropOptions, VueConstructor } from 'vue';
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import { StoryComponent, StoryProp } from '../modules';
+import { StoryComponent, StoryProp } from '../modules/storybook';
 
 const JSON_INDENTATION = 2;
 

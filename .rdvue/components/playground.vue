@@ -1,7 +1,7 @@
 <script lang="ts">
 import { PropOptions, VueConstructor } from 'vue';
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import { StoryProp } from '../modules';
+import { StoryProp } from '../modules/storybook';
 
 
 @Component

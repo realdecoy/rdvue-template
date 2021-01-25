@@ -1,6 +1,6 @@
 import Vue, { VueConstructor } from 'vue';
-import { Example, Preview } from '../components';
-import { Category } from '../modules';
+import { Example, Preview } from '../../components';
+import { Category } from './constants';
 import { StoryComponent } from './story';
 
 interface PreviewAddExample {

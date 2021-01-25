@@ -1,3 +1,4 @@
+import { fromEnv } from '@/modules/core';
 import Vue from 'vue';
 import VueI18n, { LocaleMessageObject, LocaleMessages } from 'vue-i18n';
 
@@ -23,16 +24,20 @@ const SUPPORTED_LOCALES = [
 // Module Functions
 // ----------------------------------------------------------------------------
 function getBrowserLocale(countryCodeOnly = false) {
-  const navigatorLocale =
-    navigator.languages !== undefined
-      ? navigator.languages[0]
-      : navigator.language;
+  const { languages } = navigator;
 
-  if (!navigatorLocale) {
+  const navigatorLocale = languages as unknown !== undefined
+    ? languages[0]
+    : navigator.language;
+
+  if (navigatorLocale as unknown === undefined) {
     return undefined;
   }
+
   const trimmedLocale = countryCodeOnly
-    ? navigatorLocale.trim().split(/-|_/)[0]
+    ? navigatorLocale
+      .trim()
+      .split(/-|_/)[0]
     : navigatorLocale.trim();
 
   return trimmedLocale;
@@ -42,10 +47,11 @@ function getStartingLocale() {
   const browserLocale = getBrowserLocale(true);
   let result: string;
 
-  if (SUPPORTED_LOCALES.find((p) => p.value === browserLocale)) {
+  if (SUPPORTED_LOCALES.find((p) => p.value === browserLocale) !== undefined) {
     result = browserLocale as string;
-  } else {
-    result = process.env.VUE_APP_I18N_LOCALE ?? DEFAULT_LOCALE;
+  }
+  else {
+    result = fromEnv('VUE_APP_I18N_LOCALE') ?? DEFAULT_LOCALE;
   }
 
   return result;
@@ -59,14 +65,16 @@ function loadLocaleMessages() {
   );
   const messages: LocaleMessages = {};
 
-  locales.keys().forEach((key) => {
-    const matched = key.match(/([A-Za-z0-9-_]+)\./i);
+  locales
+    .keys()
+    .forEach((key) => {
+      const matched = key.match(/([A-Za-z0-9-_]+)\./i);
 
-    if (matched && matched.length > 1) {
-      const locale = matched[1];
-      messages[locale] = locales(key) as LocaleMessageObject;
-    }
-  });
+      if (matched !== null && matched.length > 1) {
+        const locale = matched[1];
+        messages[locale] = locales(key) as LocaleMessageObject;
+      }
+    });
 
   return messages;
 }
@@ -76,7 +84,7 @@ function loadLocaleMessages() {
 // ----------------------------------------------------------------------------
 const i18n = new VueI18n({
   locale: getStartingLocale(),
-  fallbackLocale: process.env.VUE_APP_I18N_FALLBACK_LOCALE ?? DEFAULT_LOCALE,
+  fallbackLocale: fromEnv('VUE_APP_I18N_FALLBACK_LOCALE') as unknown as string ?? DEFAULT_LOCALE,
   messages: loadLocaleMessages(),
 });
 

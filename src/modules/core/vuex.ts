@@ -28,10 +28,10 @@ export function MultiParamAction<V>(options: ActionDecoratorParams = {}) {
     const actionFn = Action(options);
 
     // Override method. We expect a single Array param which we will spread
-    // to invoke the underlying original method. The single array param is
-    // produce by getMultiParamModule via not spreading the supplied args
-    // but just passing the Array. This is necessary to allow Vuex actions
-    // which support multiple arguments (one 1 'payload' by default design).
+    // To invoke the underlying original method. The single array param is
+    // Produce by getMultiParamModule via not spreading the supplied args
+    // But just passing the Array. This is necessary to allow Vuex actions
+    // Which support multiple arguments (one 1 'payload' by default design).
     descriptor.value = function(this: ThisParameterType<unknown>, args: unknown[]) {
       return originalFn.call(this, ...args);
     };
@@ -46,7 +46,7 @@ export function MultiParamAction<V>(options: ActionDecoratorParams = {}) {
 export function getMultiParamModule<StoreType extends VuexModule>(
   moduleClass: ConstructorOf<StoreType>,
   moduleName: string,
-  store: Store<StoreType>,
+  store: Store<unknown>,
 ) {
   return new Proxy<StoreType>(getModule(moduleClass, store), {
     // tslint:disable-next-line:no-any
@@ -56,10 +56,13 @@ export function getMultiParamModule<StoreType extends VuexModule>(
 
       if (typeof targetValue === 'function') {
         result = function(this: ThisParameterType<unknown>, ...args: unknown[]) {
-          // Call the original function with the arguments as a single
-          // parameter (do not spread array). Vuex expects a single params.
-          // We will use the MultiParamAction decorator to handle spreading
-          // just before the underlying method gets invoked.
+          /**
+           * Call the original function with the arguments as a single
+           * parameter (do not spread array). Vuex expects a single params.
+           * we will use the MultiParamAction decorator to handle spreading
+           * just before the underlying method gets invoked.
+           */
+
           return (targetValue as UnknownFunction).call(this, args);
         };
       } else {

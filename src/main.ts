@@ -1,10 +1,13 @@
-import Vue from 'vue';
-import App from '@/pages/app/app.vue';
-import router from '@/config/router';
-import store from '@/store';
 import '@/config/register-service-worker';
+import router from '@/config/router';
+import App from '@/pages/app/app.vue';
+import store from '@/store';
 import '@/theme/_all.scss';
-const modules = require('../.rdvue/modules.js').default;
+import Vue from 'vue';
+import { Lookup } from './modules/core';
+
+// tslint:disable-next-line: no-var-requires
+const { default: modules } = require('../.rdvue/modules.js') as Lookup<{}>;
 
 Vue.config.productionTip = false;
 

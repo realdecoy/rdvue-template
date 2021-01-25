@@ -3,11 +3,38 @@
  */
 const path = require('path');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const isProd = process.env.NODE_ENV === 'production';
+const IS_PROD = process.env.NODE_ENV === 'production';
 const { default: ImageminPlugin } = require('imagemin-webpack-plugin');
 const imageminMozjpeg = require('imagemin-mozjpeg');
 const options = require('./.rdvue/options');
-const { IconWebpackPlugin } = require('./.rdvue') 
+const { IconWebpackPlugin } = require('./.rdvue')
+
+const prodPlugins = [
+  // Produces a bundle report for production build. 
+  // Generates a report to be viewed later.
+  new BundleAnalyzerPlugin({ analyzerMode: "static" }),
+
+  // Reduce image size for assets in Production build.
+  new ImageminPlugin({
+    test: /\.(jpe?g|png|gif|svg)$/i,
+    pngquant: {
+      quality: '80-90'
+    },
+    plugins: [
+      imageminMozjpeg({
+        quality: 80,
+        progressive: false
+      })
+    ]
+  })
+];
+
+const devPlugins = [
+  new IconWebpackPlugin({
+    disable: !IS_PROD
+  }),
+  // Add plugins
+];
 
 module.exports = {
   chainWebpack: (config) => {
@@ -16,48 +43,19 @@ module.exports = {
     config.plugins.delete('prefetch');
   },
   configureWebpack: {
-    externals: {
-      resolve: {
-        alias: {
-          '.rdvue': path.resolve(__dirname, '.rdvue/'),
-        }
+    resolve: {
+      alias: {
+        '.rdvue': path.resolve(__dirname, '.rdvue/'),
       },
-      // Packages to exclude. E.g. 'highlight.js'
+      extensions: ['.ts', '.js', '.vue', '.json'],
     },
-    plugins: [...(isProd ?
-      // ----------------------------------------------------------------------
-      // PRODUCTION PLUGINS
-      // ----------------------------------------------------------------------
-      [
-
-        // Produces a bundle report for production build. 
-        // Generates a report to be viewed later.
-        new BundleAnalyzerPlugin( {analyzerMode: "static"} ),
-
-        // Reduce image size for assets in Production build.
-        new ImageminPlugin({
-          test: /\.(jpe?g|png|gif|svg)$/i,
-          pngquant: {
-            quality: '80-90'
-          },
-          plugins: [
-            imageminMozjpeg({
-              quality: 80,
-              progressive: false
-            })
-          ]
-        })
-      ] :
-
-      // ----------------------------------------------------------------------
-      // DEV PLUGINS
-      // ----------------------------------------------------------------------
-      [
-        new IconWebpackPlugin({
-          disable: false
-        }),
-        // Add plugins
-      ])],
+    // Packages to exclude. E.g. 'highlight.js'
+    externals: {
+      'highlight.js': 'highlight.js',
+      'js-beautify': 'js-beautify',
+      'pretty': 'pretty'
+    },
+    plugins: IS_PROD ? prodPlugins : devPlugins,
     optimization: {
       runtimeChunk: 'single',
       splitChunks: {

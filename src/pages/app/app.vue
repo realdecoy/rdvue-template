@@ -1,7 +1,7 @@
 <style lang="scss" src="./app.scss"></style>
 <script lang="ts" src="./app.ts"></script>
 <template>
-  <div id="app">
+  <div id="app" class="[ grid ]">
     <component v-if="layout" :is="layout">
       <router-view />
     </component>

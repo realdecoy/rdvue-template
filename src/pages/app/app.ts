@@ -20,7 +20,7 @@ export default class AppView extends Vue {
 
     // Load the layout component aynchronously
     // (see: https://vuejs.org/v2/guide/components-dynamic-async.html)
-    const component = await import(`@/layouts/${layout}`);
+    const component = await import(`@/layouts/${layout}`) as { default: Vue };
     Vue.component(layout, component.default);
 
     // Return tag to render: the layout's tag name or plain div as a fallback.

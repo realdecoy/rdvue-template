@@ -1,12 +1,12 @@
-import { Module, VuexModule, Mutation } from 'vuex-module-decorators';
-import store from './index';
 import { getMultiParamModule, MultiParamAction } from '@/modules/core';
+import { Module, Mutation, VuexModule } from 'vuex-module-decorators';
+import store from './index';
 
 const MODULE_NAME = 'App';
 
 @Module({ namespaced: true, name: MODULE_NAME, dynamic: true, store })
 class Store extends VuexModule {
-  private fooBarVal: string = '';
+  private fooBarVal = '';
 
   // ------------------------------------------------------------------------
   // Getters
@@ -22,7 +22,7 @@ class Store extends VuexModule {
 
   @MultiParamAction()
   public initializeFooBar() {
-    return this.setFooBar('Hello World');
+    this.setFooBar('Hello World');
   }
 
   @MultiParamAction()
@@ -45,8 +45,9 @@ class Store extends VuexModule {
   }
 }
 
-const App = getMultiParamModule<Store>(Store, MODULE_NAME, (store as any));
+const app = getMultiParamModule<Store>(Store, MODULE_NAME, store);
 
 export {
-  App,
+    app as AppStore,
 };
+

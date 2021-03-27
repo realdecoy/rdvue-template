@@ -4,7 +4,7 @@ import Router from 'vue-router';
 Vue.use(Router);
 
 export enum Page {
-  Login = 'login',
+  Hello = 'hello-world',
   Proxy = 'proxy',
 }
 
@@ -13,26 +13,15 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/login',
-      name: Page.Login,
-      meta: {
-        layout: 'blank',
-      },
-      component: () =>
-        import(
-          /* webpackChunkName: "hello-world" */
-          '@/pages/login'),
-    },
-    {
-      path: '/proxy',
-      name: Page.Proxy,
+      path: '/',
+      name: Page.Hello,
       meta: {
         layout: 'default',
       },
       component: () =>
         import(
           /* webpackChunkName: "hello-world" */
-          '@/pages/proxy'),
+          '@/pages/hello-world'),
     },
   ],
 });

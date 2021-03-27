@@ -2,14 +2,14 @@
 <script lang="ts" src="./default.ts">
 </script>
 <template>
-  <div class="[ default ][ ]">
+  <div class="[ default ][ grid ]">
     <!-- Header -->
     <div class="[ ]">
 
     </div>
 
     <!-- Body -->
-    <div class="[ ]">
+    <div class="[ grid ]">
       <transition name="fade">
         <router-view />
       </transition>

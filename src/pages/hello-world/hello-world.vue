@@ -1,11 +1,11 @@
 <style lang="scss" src="./hello-world.scss"></style>
 <script lang="ts" src="./hello-world.ts"></script>
 <template> 
-    <div class="hello-world">
-        <h1>Vue Starter Project</h1>
+    <div class="[ hello-world ][ grid ]">
+        <h1 class="[ text-center ]">Vue Starter Project</h1>
         <img
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png"
-        class="logo"
+        class="[ logo ][ mx-auto ]"
         />
         <div class="call-sign">
         <div class="powered-by">

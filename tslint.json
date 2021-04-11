@@ -10,7 +10,8 @@
       "*.json",
       "**/*.json",
       ".mock/**/*.json",
-      "node_modules/**"
+      "node_modules/**",
+      ".rdvue/template/**"
     ]
   },
   "rules": {

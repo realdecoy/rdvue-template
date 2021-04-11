@@ -1,1 +1,1 @@
-export default {i18n: require('../src/config/i18n').default,};
+export default {};

@@ -12,7 +12,7 @@ export default class extends Vue {}
 </script>
 
 <template>
-    <div>
+    <div class="[ text-center ]">
         <b-dropdown aria-role="list">
             <button class="button is-primary" slot="trigger" slot-scope="{ active }">
                 <span>Click me!</span>

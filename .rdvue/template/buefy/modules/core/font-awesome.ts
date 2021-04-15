@@ -1,5 +1,6 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faArrowCircleDown,
+import {
+  faArrowCircleDown,
   faArrowCircleUp,
   faArrowDown,
   faArrowUp,

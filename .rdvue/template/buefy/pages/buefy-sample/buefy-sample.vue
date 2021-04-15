@@ -12,11 +12,11 @@ export default class extends Vue {}
 </script>
 
 <template>
-    <div>
+    <div class="[ text-center ]">
         <b-dropdown aria-role="list">
-            <button class="button is-primary" slot="trigger" slot-scope="{ active }">
+            <button class="button" slot="trigger" slot-scope="{ active }">
                 <span>Click me!</span>
-                <BIcon :icon="active ? 'chevron-up' : 'chevron-down'" />
+                <BIcon pack="fas" :icon="active ? 'chevron-up' : 'chevron-down'" />
             </button>
 
             <b-dropdown-item aria-role="listitem">Action</b-dropdown-item>

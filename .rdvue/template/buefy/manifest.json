@@ -35,6 +35,10 @@
       "component": "`require('@/pages/buefy-sample/buefy-sample.vue').default`"
     }
   ],
+  "moduleImports": [
+    "export * from './constants';\r\n",
+    "export * from './font-awesome';\r\n"
+  ],
   "projectModules": [
     "import '@/modules/core/font-awesome';"
   ],

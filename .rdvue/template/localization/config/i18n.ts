@@ -24,15 +24,18 @@ const SUPPORTED_LOCALES = [
 // ----------------------------------------------------------------------------
 function getBrowserLocale(countryCodeOnly = false) {
   const navigatorLocale =
+    // tslint:disable-next-line: strict-type-predicates
     navigator.languages !== undefined
       ? navigator.languages[0]
       : navigator.language;
 
+  // tslint:disable-next-line: strict-boolean-expressions
   if (!navigatorLocale) {
     return undefined;
   }
   const trimmedLocale = countryCodeOnly
-    ? navigatorLocale.trim().split(/-|_/)[0]
+    ? navigatorLocale.trim()
+      .split(/-|_/)[0]
     : navigatorLocale.trim();
 
   return trimmedLocale;
@@ -42,9 +45,11 @@ function getStartingLocale() {
   const browserLocale = getBrowserLocale(true);
   let result: string;
 
-  if (SUPPORTED_LOCALES.find((p) => p.value === browserLocale)) {
+  if (SUPPORTED_LOCALES
+    .find((p) => p.value === browserLocale) !== undefined) {
     result = browserLocale as string;
   } else {
+    // tslint:disable-next-line: no-unsafe-any
     result = process.env.VUE_APP_I18N_LOCALE ?? DEFAULT_LOCALE;
   }
 
@@ -59,14 +64,16 @@ function loadLocaleMessages() {
   );
   const messages: LocaleMessages = {};
 
-  locales.keys().forEach((key) => {
-    const matched = key.match(/([A-Za-z0-9-_]+)\./i);
+  locales.keys()
+    .forEach((key) => {
+      const matched = key.match(/([A-Za-z0-9-_]+)\./i);
 
-    if (matched && matched.length > 1) {
-      const locale = matched[1];
-      messages[locale] = locales(key) as LocaleMessageObject;
-    }
-  });
+      // tslint:disable-next-line: strict-boolean-expressions
+      if (matched && matched.length > 1) {
+        const locale = matched[1];
+        messages[locale] = locales(key) as LocaleMessageObject;
+      }
+    });
 
   return messages;
 }
@@ -76,6 +83,7 @@ function loadLocaleMessages() {
 // ----------------------------------------------------------------------------
 const i18n = new VueI18n({
   locale: getStartingLocale(),
+  // tslint:disable-next-line: no-unsafe-any
   fallbackLocale: process.env.VUE_APP_I18N_FALLBACK_LOCALE ?? DEFAULT_LOCALE,
   messages: loadLocaleMessages(),
 });

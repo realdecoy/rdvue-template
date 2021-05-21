@@ -32,7 +32,6 @@
     "pretty": "^2.0.0",
     "register-service-worker": "^1.5.2",
     "vue": "^2.5.22",
-    "vue-i18n": "^8.22.4",
     "vue-property-decorator": "^7.0.0",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1",

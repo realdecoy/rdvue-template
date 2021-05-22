@@ -24,8 +24,12 @@
     }
   ],
   "packages": {
-    "dependencies": ["vue-i18n"],
-    "devDependencies": ["vue-cli-plugin-i18n"]
+    "dependencies": [
+      "vue-i18n"
+    ],
+    "devDependencies": [
+      "vue-cli-plugin-i18n@1.0.1"
+    ]
   },
   "routes": [
     {

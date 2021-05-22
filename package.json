@@ -31,6 +31,7 @@
     "log-symbols": "^4.0.0",
     "pretty": "^2.0.0",
     "register-service-worker": "^1.5.2",
+    "tslib": "^2.2.0",
     "vue": "^2.5.22",
     "vue-property-decorator": "^7.0.0",
     "vue-router": "^3.0.1",

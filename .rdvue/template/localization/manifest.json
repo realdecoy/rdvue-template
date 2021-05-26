@@ -48,5 +48,13 @@
   },
   "modules": {
     "i18n": "`require('../src/config/i18n').default`"
+  },
+  "main": {
+    "modules": [
+      "  i18n"
+    ],
+    "imports": [
+      "const i18n = require('../src/config/i18n').default;"
+    ]
   }
 }

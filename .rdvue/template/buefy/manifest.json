@@ -44,5 +44,11 @@
   ],
   "projectTheme": [
     "@import 'bulma';\r\n"
-  ]
+  ],
+  "main": {
+    "imports": [
+      "import Buefy from 'buefy';\r\n",
+      "\r\nVue.use(Buefy);"
+    ]
+  }
 }

@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "name": "service",
   "description": "Generate a basic service.",
   "arguments": [{

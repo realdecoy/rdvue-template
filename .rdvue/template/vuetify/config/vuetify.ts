@@ -1,12 +1,12 @@
 import '@mdi/font/css/materialdesignicons.css';
-import Vue, { PluginFunction } from 'vue';
-import Vuetify from 'vuetify/lib';
+import Vue from 'vue';
+import Vuetify, { UserVuetifyPreset } from 'vuetify';
 import 'vuetify/dist/vuetify.min.css';
 import '@/theme/roboto.css';
 
-Vue.use(Vuetify as PluginFunction<unknown>);
+Vue.use(Vuetify);
 
-const opts = {
+const opts: Partial<UserVuetifyPreset> = {
   icons: {
     iconfont: 'mdi', // default - only for display purposes
   },

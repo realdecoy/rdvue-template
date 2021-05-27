@@ -6,13 +6,9 @@ import '@/theme/_all.scss';
 import Vue from 'vue';
 import { Lookup } from './modules/core';
 
-// tslint:disable-next-line: no-var-requires
-const { default: modules } = require('../.rdvue/modules.js') as Lookup<{}>;
-
 Vue.config.productionTip = false;
 
 new Vue({
-  ...modules,
   router,
   store,
   render: (h) => h(App),

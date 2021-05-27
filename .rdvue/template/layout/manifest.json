@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "name": "layout",
   "description": "Generate a basic layout.",
   "arguments": [

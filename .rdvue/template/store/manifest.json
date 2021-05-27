@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "name": "store",
   "description": "Generate a basic Vuex Store module.",
   "arguments": [{

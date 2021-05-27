@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "name": "localization",
   "group": false,
   "description": "Generate files needed for basic localization.",

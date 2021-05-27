@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "name": "auth",
   "group": true,
   "description": "Generate a basic components needed for basic authenticaton.",

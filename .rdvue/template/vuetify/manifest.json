@@ -49,5 +49,13 @@
   },
   "modules": {
     "vuetify": "`require('@/config/vuetify').default`"
+  },
+  "main": {
+    "modules": [
+      "  vuetify"
+    ],
+    "imports": [
+      "import vuetify '@/config/vuetify';"
+    ]
   }
 }

@@ -75,20 +75,6 @@
           "replace": "${componentNameKebab}"
         }
       ]
-    },
-      {
-      "source": "component.stories.ts",
-      "target": "${componentNameKebab}.stories.ts",
-      "content": [
-        {
-          "matchRegex": "__COMPONENT__KEBAB__",
-          "replace": "${componentNameKebab}"
-        },
-        {
-          "matchRegex": "__COMPONENT__",
-          "replace": "${componentName}"
-        }
-      ]
     }
   ]
 }

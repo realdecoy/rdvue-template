@@ -1,10 +1,8 @@
-import { StoryComponent, StoryProp, Vue } from '.rdvue/storybook';
+import { Component, Prop, Vue } from 'vue-property-decorator';
 
-@StoryComponent({
-  name: '__COMPONENT__KEBAB__',
-  description: '__COMPONENT__ component.',
-  import: '@/components/__COMPONENT__KEBAB__',
+@Component({
   components: {},
+  name: '__COMPONENT__KEBAB__',
 })
 
 
@@ -16,7 +14,7 @@ class __COMPONENT__ extends Vue {
   // --------------------------------------------------------------------------
   // Props
   // --------------------------------------------------------------------------
-
+  @Prop({ default: 'default' }) public customProp!: string;
   // --------------------------------------------------------------------------
   // Constructor
   // --------------------------------------------------------------------------

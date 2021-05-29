@@ -17,9 +17,13 @@ module.exports = {
     colors: {
       inherit: 'inherit',
       transparent: 'transparent',
+      app: {
+        background: 'var(--app-background)',
+      },
       typography: {
         primary: 'var(--typography-primary)',
         secondary: 'var(--typography-secondary)',
+        success: 'var(--typography-success)',
         error: 'var(--typography-error)',
         light: 'var(--typography-light)',
       },

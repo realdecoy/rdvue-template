@@ -8,7 +8,9 @@ html {
 	@apply h-full;
 	@apply w-full;
 }
+
 body {
+	@apply bg-gray-400;
 	@apply grid;
 	@apply h-full;
 	@apply w-full;

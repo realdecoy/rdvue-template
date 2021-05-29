@@ -2,7 +2,13 @@
  * Default colors used by Tailwind in Light theme.
  */
 :root {
-	// --typography-primary: #000000;
+	--typography-primary: #000000;
+	--typography-secondary: #201b1b;
+	--typography-error: #ac3838;
+	--typography-light: #b3b3b3;
+	--button-success: #74b871;
+	--button-warning: #d3782d;
+	--button-error: #ff5555;
 }
 
 .theme-color-preference {

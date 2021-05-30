@@ -32,13 +32,21 @@
     }
   ],
   "packages": {
-    "dependencies": ["vuetify", "@mdi/font"],
-    "devDependencies": [ "sass@1.32.12", "vue-cli-plugin-vuetify", "vue-template-compiler", "vuetify-loader"]
+    "dependencies": [
+      "vuetify",
+      "@mdi/font"
+    ],
+    "devDependencies": [
+      "sass@1.32.12",
+      "vue-cli-plugin-vuetify",
+      "vue-template-compiler",
+      "vuetify-loader"
+    ]
   },
   "routes": [
     {
-      "path": "'/vuetify-test'",
-      "name": "'vuetify-test'",
+      "path": "'/vuetify-sample'",
+      "name": "'vuetify-sample'",
       "component": "`require('@/pages/vuetify-sample/vuetify-app.vue').default`"
     }
   ],
@@ -55,7 +63,7 @@
       "  vuetify"
     ],
     "imports": [
-      "import vuetify '@/config/vuetify';"
+      "import vuetify from '@/config/vuetify';"
     ]
   }
 }

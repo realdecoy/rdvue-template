@@ -4,9 +4,7 @@
 <template>
   <div class="[ default ][ grid ]">
     <!-- Header -->
-    <div class="[ ]">
-
-    </div>
+    <div class="[ ]"></div>
 
     <!-- Body -->
     <div class="[ grid ]">
@@ -17,7 +15,7 @@
 
     <!-- Footer -->
     <div class="[ ]">
-      
+      <AppFooter customProp="Footer" />
     </div>
   </div>
 </template>

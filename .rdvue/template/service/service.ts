@@ -1,6 +1,18 @@
 import { AxiosResponse } from 'axios';
 import { BaseService } from './_base';
 
+type ServiceResult = {
+  success: boolean;
+  // tslint:disable-next-line: no-any
+  data?: any;
+};
+
+enum StatusCode {
+  OK = 200,
+  NOT_FOUND = 404,
+  SERVER_ERROR = 500,
+}
+
 class __SERVICE__ extends BaseService {
   // --------------------------------------------------------------------------
   // [Private] Fields
@@ -22,15 +34,23 @@ class __SERVICE__ extends BaseService {
   // --------------------------------------------------------------------------
   // [Public] Methods
   // --------------------------------------------------------------------------
-  public async postData(data: string): Promise<any> {
+  public async postData(payload: string): Promise<ServiceResult> {
     // define custom request options [NB: default config found in @/services/base]
     const options = {};
+    const result: ServiceResult = { success: false };
 
     return this.api
-      .post(`<endpoint-name>`, data, options)
+      .post(`<endpoint-name>`, payload, options)
       .then((response: AxiosResponse) => {
         // handle response here
-        return response;
+        const { status, data } = response;
+        result.success = status === StatusCode.OK;
+        result.data = data;
+
+        return result;
+      })
+      .catch((err) => {
+        return result;
       });
   }
 
@@ -48,7 +68,7 @@ class __SERVICE__ extends BaseService {
 // Module Exports
 // ----------------------------------------------------------------------------
 
-const service  = new __SERVICE__();
+const service = new __SERVICE__();
 
 export {
   service as default,

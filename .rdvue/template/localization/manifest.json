@@ -54,7 +54,7 @@
       "  i18n"
     ],
     "imports": [
-      "const i18n = require('../src/config/i18n').default;"
+      "import i18n from '@/config/i18n';"
     ]
   }
 }

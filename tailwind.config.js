@@ -19,6 +19,7 @@ module.exports = {
       transparent: 'transparent',
       app: {
         background: 'var(--app-background)',
+        footer: 'var(--app-footer)',
       },
       typography: {
         primary: 'var(--typography-primary)',

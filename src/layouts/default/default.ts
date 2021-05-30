@@ -1,8 +1,11 @@
 import { Component, Vue } from 'vue-property-decorator';
 import { Dictionary } from 'vue-router/types/router';
+import AppFooter from '@/components/app-footer';
 
 @Component({
-  components: {},
+  components: {
+    AppFooter
+  },
   name: 'default',
 })
 class Default extends Vue {

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>{{ $t("message") }}</p>
+    <p class="[ text-center ]">{{ $t('message') }}</p>
   </div>
 </template>
 

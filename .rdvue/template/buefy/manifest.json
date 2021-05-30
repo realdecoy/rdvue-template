@@ -27,7 +27,10 @@
   ],
   "packages": {
     "dependencies": [
-      "buefy"
+      "buefy",
+      "@fortawesome/fontawesome-svg-core",
+      "@fortawesome/free-solid-svg-icons",
+      "@fortawesome/vue-fontawesome"
     ]
   },
   "routes": [

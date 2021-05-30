@@ -8,7 +8,7 @@ Vue.use(Router);
 
 export enum Page {
   Hello = 'hello-world',
-  Proxy = 'proxy',
+  NotFound = 'not-found',
 }
 
 export default new Router({
@@ -26,6 +26,17 @@ export default new Router({
         import(
           /* webpackChunkName: "hello-world" */
           '@/pages/hello-world'),
+    },
+    {
+      path: '*',
+      name: Page.NotFound,
+      meta: {
+        layout: 'default',
+      },
+      component: () =>
+        import(
+          /* webpackChunkName: "not-found" */
+          '@/pages/not-found'),
     },
   ],
 });

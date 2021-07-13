@@ -52,7 +52,7 @@ Vue.component(FONT_AWESOME_COMPONENT,
   FontAwesomeIcon);
 
 // tslint:disable-next-line:no-var-requires
-const { default: config } = require('buefy/src/utils/config') as {
+const { default: config } = require('@realdecoy/buefy/src/utils/config') as {
   default: {
     defaultIconComponent: string;
     defaultIconPack: string;

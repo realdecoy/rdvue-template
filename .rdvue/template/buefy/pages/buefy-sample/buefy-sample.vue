@@ -6,9 +6,9 @@ const {
   BDropdown,
   BDropdownItem,
   // tslint:disable-next-line:no-var-requires
-} = require('buefy/dist/components/dropdown') as RequireVue;
+} = require('@realdecoy/buefy/dist/components/dropdown') as RequireVue;
 // tslint:disable-next-line:no-var-requires
-const { BIcon } = require('buefy/dist/components/icon') as RequireVue;
+const { BIcon } = require('@realdecoy/buefy/dist/components/icon') as RequireVue;
 
 @Component({ components: { BDropdown, BDropdownItem, BIcon } })
 export default class extends Vue {}

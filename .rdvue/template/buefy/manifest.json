@@ -27,7 +27,7 @@
   ],
   "packages": {
     "dependencies": [
-      "buefy",
+      "@realdecoy/buefy@0.9.10",
       "@fortawesome/fontawesome-svg-core",
       "@fortawesome/free-solid-svg-icons",
       "@fortawesome/vue-fontawesome"
@@ -52,7 +52,7 @@
   ],
   "main": {
     "imports": [
-      "import Buefy from 'buefy';\r\n",
+      "import Buefy from '@realdecoy/buefy';\r\n",
       "\r\nVue.use(Buefy);"
     ]
   }

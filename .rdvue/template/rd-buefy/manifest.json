@@ -21,8 +21,8 @@
       "target": "pages/rd-buefy-sample/rd-buefy-sample.vue"
     },
     {
-      "source": "theme/bulma.scss",
-      "target": "theme/bulma.scss"
+      "source": "theme/rd-buefy.scss",
+      "target": "theme/rd-buefy.scss"
     }
   ],
   "packages": {

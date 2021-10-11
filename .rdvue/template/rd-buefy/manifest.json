@@ -1,0 +1,55 @@
+{
+  "version": 2,
+  "name": "rd-buefy",
+  "group": false,
+  "hasRoutes": true,
+  "hasProjectModules": true,
+  "description": "Generate files/dependencies needed for the rd-buefy UI Library.",
+  "sourceDirectory": "./",
+  "installDirectory": "./",
+  "files": [
+    {
+      "source": "modules/core/constants.ts",
+      "target": "modules/core/constants.ts"
+    },
+    {
+      "source": "modules/core/font-awesome.ts",
+      "target": "modules/core/font-awesome.ts"
+    },
+    {
+      "source": "pages/rd-buefy-sample/rd-buefy-sample.vue",
+      "target": "pages/rd-buefy-sample/rd-buefy-sample.vue"
+    },
+    {
+      "source": "theme/bulma.scss",
+      "target": "theme/bulma.scss"
+    }
+  ],
+  "packages": {
+    "dependencies": [
+      "buefy",
+      "@fortawesome/fontawesome-svg-core",
+      "@fortawesome/free-solid-svg-icons",
+      "@fortawesome/vue-fontawesome"
+    ]
+  },
+  "routes": [
+    {
+      "path": "'/rd-buefy-sample'",
+      "name": "'rd-buefy-sample'",
+      "component": "`require('@/pages/buefy-sample/buefy-sample.vue').default`"
+    }
+  ],
+  "moduleImports": [
+    "export * from './constants';\r\n",
+    "export * from './font-awesome';\r\n"
+  ],
+  "projectModules": ["import '@/modules/core/font-awesome';"],
+  "projectTheme": ["@import 'bulma';\r\n"],
+  "main": {
+    "imports": [
+      "import RdBuefy from '@realdecoy/buefy';\r\n",
+      "\r\nVue.use(RdBuefy);"
+    ]
+  }
+}

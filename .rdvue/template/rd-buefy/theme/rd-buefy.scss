@@ -68,6 +68,4 @@ $link-focus-border: $primary;
 // ----------------------------------------------------------------------------
 
 // Loads the entire rd-buefy css lib
-@import '~@realdecoy/buefy/src/scss/buefy';
-
-// Only load components being used.
+@import '~@realdecoy/buefy/src/scss/buefy-build';

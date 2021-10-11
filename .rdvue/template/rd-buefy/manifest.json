@@ -45,7 +45,7 @@
     "export * from './font-awesome';\r\n"
   ],
   "projectModules": ["import '@/modules/core/font-awesome';"],
-  "projectTheme": ["@import 'bulma';\r\n"],
+  "projectTheme": ["@import 'rd-buefy';\r\n"],
   "main": {
     "imports": [
       "import RdBuefy from '@realdecoy/buefy';\r\n",

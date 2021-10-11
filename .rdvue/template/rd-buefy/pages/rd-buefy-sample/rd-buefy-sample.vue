@@ -14,7 +14,9 @@ export default class extends Vue {}
 
 <template>
   <div class="[ text-center ]">
-    <b-button :loading="true" type="is-success">A Button loading</b-button>
+    <span
+      >A Button loading <b-button :loading="true" type="is-success"></b-button
+    ></span>
     <b-dropdown aria-role="list">
       <button class="button" slot="trigger" slot-scope="{ active }">
         <span>Click me!</span>

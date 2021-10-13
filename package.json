@@ -11,7 +11,7 @@
     "lint:fix": "npx tslint --fix -p .",
     "test:e2e": "echo \"Error: no e2e test specified\" && exit 1",
     "test:unit": "echo \"Error: no unit test specified\" && exit 1",
-		"serve:design-system":"cd node_modules && cd design-system && npm run serve"
+    "serve:design-system": "cd node_modules/design-system && npm install && npm run serve -- --port 9000"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",

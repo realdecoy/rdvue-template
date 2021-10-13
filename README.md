@@ -46,15 +46,18 @@ npm run test:unit
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-## Running Design System
 
-#### Prerequisites
+# Design System
 
-1. Create a **_.env.local_** file in the root of the Design System folder (found in your node_modules) with the following:
+### Prerequisites
 
-   `REPO_URL=<URL_FOR_COMPONENT_LIBRARY_REPO>`
+Create a **_.env.local_** file in the root of the Design System folder (found in your node_modules) with the following:
+
+`REPO_URL=<URL_FOR_COMPONENT_LIBRARY_REPO>`
 
 ### Serving Design System App
 
-To serve the design system web app run the following command:  
-`npm run serve:design-system`
+<!-- > To serve the design system web app run the following command:  -->
+``` 
+npm run serve:design-system
+```

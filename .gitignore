@@ -10,6 +10,9 @@ selenium-debug.log
 .env.local
 .env.*.local
 
+# npm source file
+.npmrc
+
 # Log files
 npm-debug.log*
 yarn-debug.log*

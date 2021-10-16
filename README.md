@@ -46,6 +46,15 @@ npm run test:unit
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
+# rd-buefy [Plugin] 
+
+### Prerequisites
+
+Create a **_.npmrc_** file in the root of your generated project with with following:
+
+`@realdecoy:registry=https://npm.pkg.github.com`
+
+`//npm.pkg.github.com/:_authToken=<YOUR_GITHUB_AUTH_TOKEN_HERE>`
 
 # Design System
 

@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "name": "design-system",
+  "group": false,
+  "hasRoutes": false,
+  "hasProjectModules": false,
+  "description": "Generate files/dependencies needed for the design-system Plugin.",
+  "sourceDirectory": "./",
+  "installDirectory": "./",
+  "files": [],
+  "packages": {
+    "dependencies": [
+      "design-system@https://github.com/realdecoy/design-system.git"
+    ]
+  }
+}

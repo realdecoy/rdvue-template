@@ -7,6 +7,7 @@
     "clone-library": "git clone https://github.com/realdecoy/design-system-components.git .library",
     "clean-library": "cd .library && rm -rf README.md && rm -rf .git",
     "upgrade-rdvue": "npx rdvue@latest upgrade",
+    "setup-design-system": "cp .rdvue/template/design-system/webpack.config.ts node_modules/design-system/webpack.config.ts",
     "reset-design-system": "run-s clear-library clone-library clean-library",
     "postinstall": "run-s upgrade-rdvue",
     "serve": "vue-cli-service serve",
@@ -16,8 +17,8 @@
     "lint:fix": "npx tslint --fix -p .",
     "test:e2e": "echo \"Error: no e2e test specified\" && exit 1",
     "test:unit": "echo \"Error: no unit test specified\" && exit 1",
-    "launch-design-system": "cd node_modules/design-system && npm install && npm run serve:rdvue -- --port 9000",
-    "serve:design-system": "launch-design-system"
+    "launch-design-system": "cd node_modules/design-system && npm run serve:rdvue -- --port 9000",
+    "serve:design-system": "run-s setup-design-system launch-design-system"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",

@@ -3,7 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "postinstall": "npx rdvue@latest upgrade",
+    "clear-library": "rimraf .library",
+    "clone-library": "git clone https://github.com/realdecoy/design-system-components.git .library",
+    "clean-library": "cd .library && rimraf README.md && rimraf .git",
+    "upgrade-rdvue": "npx rdvue@latest upgrade",
+    "setup-ds-webpack": "cp .rdvue/template/design-system/webpack.config.ts node_modules/design-system/webpack.config.ts",
+    "setup-ds-library": "run-s clear-library clone-library clean-library",
+    "postinstall": "run-s upgrade-rdvue",
     "serve": "vue-cli-service serve",
     "serve-static": "cd dist && ws --spa index.html -z",
     "build": "vue-cli-service build",
@@ -11,12 +17,14 @@
     "lint:fix": "npx tslint --fix -p .",
     "test:e2e": "echo \"Error: no e2e test specified\" && exit 1",
     "test:unit": "echo \"Error: no unit test specified\" && exit 1",
-    "serve:design-system": "cd node_modules/design-system && npm install && npm run serve:rdvue -- --port 9000"
+    "launch-design-system": "cd node_modules/design-system && npm install && npm run serve:rdvue -- --port 9000",
+    "serve:design-system": "run-s setup-ds-webpack launch-design-system"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/vue-fontawesome": "^2.0.2",
+    "design-system": "https://github.com/realdecoy/design-system.git",
     "axios": "^0.21.1",
     "core-js": "^2.6.11",
     "deepmerge": "^4.2.2",
@@ -44,6 +52,7 @@
     "imagemin-webpack-plugin": "^2.4.2",
     "node-sass": "^4.9.0",
     "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
     "sass-loader": "^7.1.0",
     "tailwindcss": "^1.4.1",
     "tslint-config-prettier": "^1.18.0",

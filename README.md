@@ -56,6 +56,9 @@ Create a **_.npmrc_** file in the root of your generated project with with follo
 
 `//npm.pkg.github.com/:_authToken=<YOUR_GITHUB_AUTH_TOKEN_HERE>`
 
+Your token should have the following scopes:  
+- read:packages
+
 # Design System
 
 ### Prerequisites

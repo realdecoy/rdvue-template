@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "postinstall": "npx rdvue upgrade",
+    "postinstall": "npx rdvue@latest upgrade",
     "serve": "vue-cli-service serve",
     "serve-static": "cd dist && ws --spa index.html -z",
     "build": "vue-cli-service build",

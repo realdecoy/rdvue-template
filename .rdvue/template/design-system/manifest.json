@@ -10,7 +10,7 @@
   "files": [],
   "packages": {
     "dependencies": [
-      "design-system@https://github.com/realdecoy/design-system.git#sepa-501/load-library-from-rdvue-project-root"
+      "design-system@https://github.com/realdecoy/design-system.git"
     ]
   }
 }

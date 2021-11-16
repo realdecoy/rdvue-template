@@ -6,8 +6,13 @@
   "hasProjectModules": false,
   "description": "Generate files/dependencies needed for the design-system Plugin.",
   "sourceDirectory": "./",
-  "installDirectory": "./",
-  "files": [],
+  "installDirectory": "../",
+  "files": [
+    {
+      "source": "webpack.config.ts",
+      "target": "webpack.config.ts"
+    }
+  ],
   "packages": {
     "dependencies": [
       "design-system@https://github.com/realdecoy/design-system.git"

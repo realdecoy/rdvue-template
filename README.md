@@ -65,7 +65,7 @@ Your token should have the following scopes:
 
 Create a **_.env.local_** file in the root of the Design System folder (found in your node_modules) with the following:
 
-`REPO_URL=<URL_FOR_COMPONENT_LIBRARY_REPO>`
+`GIT_TOKEN=<PERSONAL_ACCESS_TOKEN>`
 
 ### Serving Design System App
 

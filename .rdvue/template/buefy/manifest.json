@@ -53,7 +53,11 @@
   "main": {
     "imports": [
       "import Buefy from 'buefy';\r\n",
-      "\r\nVue.use(Buefy);"
+      "\r\nVue.use(Buefy);",
+      "\r\nVue.use(Buefy, {",
+      "\r\n\tdefaultIconComponent: 'font-awesome-icon',",
+      "\r\n\tdefaultIconPack: 'fas',",
+      "\r\n});"
     ]
   }
 }

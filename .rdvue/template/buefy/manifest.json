@@ -37,7 +37,7 @@
     {
       "path": "'/buefy-sample'",
       "name": "'buefy-sample'",
-      "component": "`require('@/pages/buefy-sample/buefy-sample.vue').default`"
+      "component": "require('@/pages/buefy-sample/buefy-sample.vue').default"
     }
   ],
   "moduleImports": [

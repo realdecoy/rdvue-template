@@ -31,6 +31,9 @@ module.exports = {
         'success': 'var(--button-success)',
         'failure': 'var(--button-failure)',
       },
+      border: {
+        'light': 'var(--border-light)',
+      },
     },
     fontSize: {
       'xs': '.75rem',

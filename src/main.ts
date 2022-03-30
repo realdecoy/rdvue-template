@@ -3,6 +3,7 @@ import router from '@/config/router';
 import App from '@/pages/app/app.vue';
 import store from '@/store';
 import '@/theme/_all.scss';
+import 'tailwindcss/tailwind.css';
 import Vue from 'vue';
 
 Vue.config.productionTip = false;

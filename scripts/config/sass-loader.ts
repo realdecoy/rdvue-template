@@ -7,7 +7,7 @@ export const useSassLoader = (isDev: boolean) => ({
     'vue-style-loader',
     // including this causes an error at runtime. unsure why.
     // MiniCssExtractPlugin.loader,
-    'cache-loader',
+    // 'cache-loader',
     'css-loader',
     'postcss-loader',
     'sass-loader',

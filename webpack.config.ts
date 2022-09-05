@@ -10,8 +10,8 @@ import webpack from 'webpack';
 import type WebpackDevServer from 'webpack-dev-server';
 import WebpackBar from 'webpackbar';
 import { useFontLoader, useMediaLoader, useSassLoader, useTsLoader, useVueLoader } from './scripts/config';
-const tsConfig = require('./tsconfig.json');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+import tsConifg from './tsconfig.json';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 const IS_DEV = process.env.NODE_ENV !== 'production';
 const smp = new SpeedMeasurePlugin({ disable: true });

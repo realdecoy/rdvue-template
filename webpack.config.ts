@@ -13,9 +13,13 @@ import { useFontLoader, useMediaLoader, useSassLoader, useTsLoader, useVueLoader
 import tsConifg from './tsconfig.json';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 
+interface Configuration extends WebpackConfiguration {
+  devServer?: WebpackDevServer.Configuration;
+}
+
 const IS_DEV = process.env.NODE_ENV !== 'production';
 const smp = new SpeedMeasurePlugin({ disable: true });
-const config: webpack.Configuration & WebpackDevServer.Configuration = smp.wrap({
+const config: Configuration = smp.wrap({
   mode: IS_DEV ? 'development' : 'production',
   /**
    * HMR will NOT work without this setting
@@ -44,7 +48,7 @@ const config: webpack.Configuration & WebpackDevServer.Configuration = smp.wrap(
       useVueLoader(IS_DEV),
       useFontLoader(IS_DEV),
       useMediaLoader(IS_DEV),
-      useSassLoader(IS_DEV),
+      // useSassLoader(IS_DEV),
     ],
   },
   plugins: [
@@ -96,7 +100,7 @@ const config: webpack.Configuration & WebpackDevServer.Configuration = smp.wrap(
         css: true
       })
     ],
-    moduleIds: 'deterministic',
+    moduleIds: 'natural',
     runtimeChunk: 'single',
     splitChunks: {
       cacheGroups: {
@@ -122,6 +126,6 @@ const config: webpack.Configuration & WebpackDevServer.Configuration = smp.wrap(
     https: false,
     port: 8080,
   },
-});
+}) as Configuration;
 
 export default config;

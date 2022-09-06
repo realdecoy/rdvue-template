@@ -12,4 +12,4 @@ export const useSassLoader = (isDev: boolean) => ({
     'postcss-loader',
     'sass-loader',
   ],
-} as webpack.RuleSetRule);
+});

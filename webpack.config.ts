@@ -10,10 +10,10 @@ import webpack from 'webpack';
 import type WebpackDevServer from 'webpack-dev-server';
 import WebpackBar from 'webpackbar';
 import { useFontLoader, useMediaLoader, useSassLoader, useTsLoader, useVueLoader } from './scripts/config';
-import tsConifg from './tsconfig.json';
+import tsConfig from './tsconfig.json';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 
-interface Configuration extends WebpackConfiguration {
+interface Configuration extends WebpackDevServer.Configuration {
   devServer?: WebpackDevServer.Configuration;
 }
 
@@ -48,7 +48,7 @@ const config: Configuration = smp.wrap({
       useVueLoader(IS_DEV),
       useFontLoader(IS_DEV),
       useMediaLoader(IS_DEV),
-      // useSassLoader(IS_DEV),
+      useSassLoader(IS_DEV),
     ],
   },
   plugins: [

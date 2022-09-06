@@ -1,5 +1,4 @@
 // import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import webpack from 'webpack';
 
 export const useSassLoader = (isDev: boolean) => ({
   test: /\.(?:sa|s?c)ss$/,

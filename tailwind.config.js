@@ -1,12 +1,11 @@
 module.exports = {
-  important: true,
-  purge: {
-    content: ['./src/**/*.html', './src/**/*.vue', './src/**/*.jsx'],
-    // These options are passed through directly to PurgeCSS
-    options: {
-      whitelist: [],
+  enabled: true,
+  content: ["./src/**/**/*.{html,vue,ts,js}"],
+  safeList:[
+    {
+      pattern: /.*/
     },
-  },
+  ],
   theme: {
     /**
      * Color values are defined in /src/theme/colors.scss.
@@ -32,6 +31,9 @@ module.exports = {
         'success': 'var(--button-success)',
         'failure': 'var(--button-failure)',
       },
+      border: {
+        'light': 'var(--border-light)',
+      },
     },
     fontSize: {
       'xs': '.75rem',
@@ -46,7 +48,14 @@ module.exports = {
       '6xl': '4rem',
       '7xl': '5rem',
       '8xl': '6rem',
-    }
+    },
+    screens: {
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1536px',
+    },
   },
   variants: {},
   plugins: [],

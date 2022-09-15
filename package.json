@@ -11,7 +11,7 @@
     "setup-ds-webpack": "cp .rdvue/template/design-system/webpack.config.ts node_modules/design-system/webpack.config.ts",
     "setup-ds-library": "run-s clear-library clone-library clean-library",
     "launch-ds": "cd node_modules/design-system && npm install && npm run serve:rdvue -- --port 9000",
-    "preinstall": "run-s upgrade-rdvue",
+    "postinstall": "run-s upgrade-rdvue",
     "serve": "cross-env NODE_ENV=development webpack serve",
     "build": "cross-env NODE_ENV=production webpack build",
     "serve:build": "cd dist && ws --https --spa index.html -z -p 9000",

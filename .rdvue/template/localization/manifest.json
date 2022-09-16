@@ -25,7 +25,7 @@
   ],
   "packages": {
     "dependencies": [
-      "vue-i18n"
+      "vue-i18n@8.27.2"
     ],
     "devDependencies": [
       "vue-cli-plugin-i18n@1.0.1"

@@ -29,10 +29,20 @@ const env = {
 const mergedEnv = merge([env, (IS_DEV ? envDev : envProd)]) as Env;
 
 // ----------------------------------------------------------------------------
-// Module Exports
+// Dynamic Environment Variables
 // ----------------------------------------------------------------------------
-export {
-    mergedEnv as default,
-    IS_DEV
+
+const loadEnvAsync = async (): Promise<Env> => {
+  return new Promise<Env>(async (resolve, _) => {
+    // We are lazily pulling the env varaibles so we can update variables at runtime
+    const dynamicEnv = (await eval("import('/dynamic-env.js')")).default;
+    const mergedDynamicEnv = merge([mergedEnv, dynamicEnv]) as Env;
+
+    resolve(mergedDynamicEnv);
+  });
 };
 
+// ----------------------------------------------------------------------------
+// Module Exports
+// ----------------------------------------------------------------------------
+export { mergedEnv as default, IS_DEV, loadEnvAsync };

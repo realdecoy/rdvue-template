@@ -1,15 +1,14 @@
-import '@/config/register-service-worker';
-import router from '@/config/router';
-import App from '@/pages/app/app.vue';
-import store from '@/store';
-import '@/theme/_all.scss';
-import 'tailwindcss/tailwind.css';
-import Vue from 'vue';
+import { createApp } from 'vue'
+import { createPinia } from 'pinia'
+import { createFontAwesome } from '@/modules/core'
+import App from './components/@app'
+import router from './configs/router'
+import '@/assets/theme/@main.scss'
 
-Vue.config.productionTip = false;
 
-new Vue({
-  router,
-  store,
-  render: (h) => h(App),
-}).$mount('#app');
+const app = createApp(App)
+
+app.use(createPinia())
+app.use(router)
+app.use(createFontAwesome())
+app.mount('#app')

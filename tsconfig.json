@@ -1,59 +1,14 @@
 {
-  "ts-node": {
-    "compilerOptions": {
-      "module": "commonjs",
-      "allowJs": true
-    }
-  },
-  "compilerOptions": {
-    "target": "es2015",
-    "module": "esnext",
-    "strict": true,
-    "jsx": "preserve",
-    "importHelpers": true,
-    "moduleResolution": "node",
-    "experimentalDecorators": true,
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "isolatedModules": false,
-    "allowSyntheticDefaultImports": true,
-    "sourceMap": true,
-    "baseUrl": ".",
-    "types": [
-      "webpack-env"
-    ],
-    "paths": {
-      "@/*": [
-        "src/*"
-      ],
-      ".rdvue/*": [
-        ".rdvue/*"
-      ],
-      "scripts/*": [
-        "scripts/*"
-      ]
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.config.json"
     },
-    "lib": [
-      "esnext",
-      "dom",
-      "dom.iterable",
-      "scripthost"
-    ]
-  },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "src/**/*.vue",
-    "tests/**/*.ts",
-    "tests/**/*.tsx",
-    ".rdvue/**/*.ts",
-    ".rdvue/**/*.js",
-    "types/*.d.ts",
-    "scripts/**/*.ts",
-    "webpack.config.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    ".rdvue/template/**"
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.vitest.json"
+    }
   ]
 }

@@ -2,7 +2,7 @@
 <style lang="scss" src="./home.scss"/>
 <script lang="ts" src="./home.ts"/>
 <template>
-  Home
+  {{ t('message') }}
   <br/>
   IsReady: {{ isReady }}
   <br/>

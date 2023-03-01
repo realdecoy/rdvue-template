@@ -3,14 +3,14 @@ import { Action, getModule, VuexModule } from 'vuex-module-decorators';
 import { ActionDecoratorParams } from 'vuex-module-decorators/dist/types/action';
 
 interface Lookup<Result = unknown> {
-  [key: number]: Result
-  [key: string]: Result
+  [key: number]: Result;
+  [key: string]: Result;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 interface VuexModuleDef {
-  getModule(): { [key: string]: unknown }
-  getModuleName(): string
+  getModule(): { [key: string]: unknown };
+  getModuleName(): string;
 }
 
 type ConstructorOf<C> = new (...args: any[]) => C;

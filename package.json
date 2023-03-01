@@ -16,8 +16,8 @@
     "serve:build": "cd dist && ws --https --spa index.html -z -p 9000",
     "serve:docker": "docker run -it -p 8080:8080 -v $(pwd):/app -w /app --rm node bash -c \"npm run serve\"",
     "serve:ds": "run-s setup-ds-webpack launch-design-system",
-    "lint": "eslint src -c .eslintrc.js --ext .ts,.js",
-    "lint:fix": "eslint src -c .eslintrc.js --ext .ts,.js --fix",
+    "lint": "eslint src -c .eslintrc.js --ext .ts",
+    "lint:fix": "eslint src -c .eslintrc.js --ext .ts --fix",
     "test:e2e": "echo \"Error: no e2e test specified\" && exit 1",
     "test:unit": "echo \"Error: no unit test specified\" && exit 1"
   },

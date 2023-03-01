@@ -6,15 +6,20 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import SpeedMeasurePlugin from 'speed-measure-webpack-plugin';
 import { VueLoaderPlugin } from 'vue-loader';
-import webpack from 'webpack';
 import type WebpackDevServer from 'webpack-dev-server';
 import WebpackBar from 'webpackbar';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
-import { useFontLoader, useMediaLoader, useSassLoader, useTsLoader, useVueLoader } from './scripts/config';
+import {
+  useFontLoader,
+  useMediaLoader,
+  useSassLoader,
+  useTsLoader,
+  useVueLoader
+} from './scripts/config';
 import tsConfig from './tsconfig.json';
 
 interface Configuration extends WebpackDevServer.Configuration {
-  devServer?: WebpackDevServer.Configuration
+  devServer?: WebpackDevServer.Configuration;
 }
 
 const IS_DEV = process.env.NODE_ENV !== 'production';
@@ -34,7 +39,6 @@ const config: Configuration = smp.wrap({
      * participate in HMR. The module generated from this
      * entry is never used, so we ignore in PROD.
      */
-    // eslint-disable-next-line strict-boolean-expressions
     ...IS_DEV && {}
   },
   output: {

@@ -7,7 +7,7 @@ declare global {
     // eslint-disable-next-line
     type ElemClass = Vue;
     interface IntrinsicElements {
-      [elem: string]: any
+      [elem: string]: any;
     }
   }
 }

@@ -2,7 +2,7 @@ import { Component, Vue } from 'vue-property-decorator';
 
 @Component({
   components: {},
-  name: 'hello-world',
+  name: 'hello-world'
 })
 
 class HelloWorldView extends Vue {
@@ -14,7 +14,7 @@ class HelloWorldView extends Vue {
   // [Public] Constructor
   // --------------------------------------------------------------------------
 
-  constructor() {
+  public constructor() {
     super();
   }
 
@@ -45,5 +45,5 @@ class HelloWorldView extends Vue {
 
 export {
   HelloWorldView as default,
-  HelloWorldView,
+  HelloWorldView
 };

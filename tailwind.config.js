@@ -1,10 +1,10 @@
 module.exports = {
   enabled: true,
-  content: ["./src/**/**/*.{html,vue,ts,js}"],
+  content: ['./src/**/**/*.{html,vue,ts,js}'],
   safeList:[
     {
       pattern: /.*/
-    },
+    }
   ],
   theme: {
     /**
@@ -18,22 +18,22 @@ module.exports = {
       transparent: 'transparent',
       app: {
         background: 'var(--app-background)',
-        footer: 'var(--app-footer)',
+        footer: 'var(--app-footer)'
       },
       typography: {
         primary: 'var(--typography-primary)',
         secondary: 'var(--typography-secondary)',
         success: 'var(--typography-success)',
         error: 'var(--typography-error)',
-        light: 'var(--typography-light)',
+        light: 'var(--typography-light)'
       },
       button: {
         'success': 'var(--button-success)',
-        'failure': 'var(--button-failure)',
+        'failure': 'var(--button-failure)'
       },
       border: {
-        'light': 'var(--border-light)',
-      },
+        'light': 'var(--border-light)'
+      }
     },
     fontSize: {
       'xs': '.75rem',
@@ -47,16 +47,16 @@ module.exports = {
       '5xl': '3rem',
       '6xl': '4rem',
       '7xl': '5rem',
-      '8xl': '6rem',
+      '8xl': '6rem'
     },
     screens: {
       'sm': '640px',
       'md': '768px',
       'lg': '1024px',
       'xl': '1280px',
-      '2xl': '1536px',
-    },
+      '2xl': '1536px'
+    }
   },
   variants: {},
-  plugins: [],
+  plugins: []
 };

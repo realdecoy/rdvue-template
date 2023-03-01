@@ -1,6 +1,6 @@
-import { getMultiParamModule, MultiParamAction } from '@/modules/core';
 import { Module, Mutation, VuexModule } from 'vuex-module-decorators';
 import store from './index';
+import { getMultiParamModule, MultiParamAction } from '@/modules/core';
 
 const MODULE_NAME = 'App';
 
@@ -48,6 +48,6 @@ class Store extends VuexModule {
 const app = getMultiParamModule<Store>(Store, MODULE_NAME, store);
 
 export {
-    app as AppStore,
+  app as AppStore
 };
 

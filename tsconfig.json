@@ -43,6 +43,7 @@
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
+    "src/**/*spec.js",
     "src/**/*.vue",
     "tests/**/*.ts",
     "tests/**/*.tsx",
@@ -50,7 +51,8 @@
     ".rdvue/**/*.js",
     "types/*.d.ts",
     "scripts/**/*.ts",
-    "webpack.config.ts"
+    "webpack.config.ts",
+    ".eslintsrc.js"
   ],
   "exclude": [
     "node_modules",

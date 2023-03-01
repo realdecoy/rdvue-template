@@ -4,6 +4,6 @@ export const useMediaLoader = (isDev: boolean) => ({
   options: {
     name: '[name][contenthash:8].[ext]',
     outputPath: 'assets/img',
-    esModule: false,
-  },
+    esModule: false
+  }
 });

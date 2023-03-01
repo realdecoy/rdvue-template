@@ -1,13 +1,13 @@
-/* tslint:disable:no-console */
+/* eslint-disable no-console */
 
-import { fromEnv } from '@/modules/core';
 import { register } from 'register-service-worker';
+import { fromEnv } from '@/modules/core';
 
 if (fromEnv('NODE_ENV') === 'production') {
   register(`${fromEnv('BASE_URL')}service-worker.js`, {
     ready() {
       console.log(`App is being served from cache by a service worker.
-For more details, visit https://goo.gl/AFskqB`,
+For more details, visit https://goo.gl/AFskqB`
       );
     },
     registered() {
@@ -27,6 +27,6 @@ For more details, visit https://goo.gl/AFskqB`,
     },
     error(error) {
       console.error('Error during service worker registration:', error);
-    },
+    }
   });
 }

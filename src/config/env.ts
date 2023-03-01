@@ -19,7 +19,7 @@ const env = {
   theme: 'default',
   enableAnimations: true,
   brand: {
-    LOGO: '/assets/img/brand-logo.png',
+    LOGO: '/assets/img/brand-logo.png'
   },
   settings: {
     API_TIMEOUT_MS: 15000
@@ -32,7 +32,7 @@ const mergedEnv = merge([env, (IS_DEV ? envDev : envProd)]) as Env;
 // Module Exports
 // ----------------------------------------------------------------------------
 export {
-    mergedEnv as default,
-    IS_DEV
+  mergedEnv as default,
+  IS_DEV
 };
 

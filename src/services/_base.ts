@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
 import env from '@/config/env';
 
@@ -31,18 +31,22 @@ class BaseService {
   // --------------------------------------------------------------------------
   // Event Handlers
   // --------------------------------------------------------------------------
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   protected onRequest(config: AxiosRequestConfig) {
     // TODO: override
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   protected onRequestError(error: unknown) {
     // TODO: override
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   protected onResponse(response: AxiosResponse) {
     // TODO: override
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   protected onResponseError(error: unknown) {
     // TODO: override
   }

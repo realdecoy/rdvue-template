@@ -63,7 +63,6 @@ const config: Configuration = smp.wrap({
         { from: './src/assets/', to: './assets/img/' }
       ]
     }),
-    // Tslint:disable-next-line: no-unsafe-any
     new Dotenv({
       path: './config/.env',
       safe: './config/.env.example' // Validate against .env.example
@@ -71,7 +70,6 @@ const config: Configuration = smp.wrap({
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash:8].css',
       chunkFilename: '[name].[contenthash:8].css'
-      // Tslint:disable-next-line: no-any
     }) as any,
     new HtmlWebpackPlugin({
       template: './public/index.html',

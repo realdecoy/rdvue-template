@@ -1,7 +1,11 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
-// tslint:disable-next-line
+/* eslint-disable-next-line @typescript-eslint/tslint/config,
+   @typescript-eslint/no-unsafe-assignment,
+   @typescript-eslint/no-var-requires,
+   import/no-internal-modules
+*/
 const { default: generatedRoutes } = require('../../.rdvue/routes.js');
 
 Vue.use(Router);
@@ -15,28 +19,29 @@ export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     ...generatedRoutes,
     {
       path: '/',
       name: Page.Hello,
       meta: {
-        layout: 'default',
+        layout: 'default'
       },
-      component: () =>
+      component: async () =>
         import(
-          /* webpackChunkName: "hello-world" */
-          '@/pages/hello-world'),
+          /* WebpackChunkName: "hello-world" */
+          '@/pages/hello-world')
     },
     {
       path: '*',
       name: Page.NotFound,
       meta: {
-        layout: 'default',
+        layout: 'default'
       },
-      component: () =>
+      component: async () =>
         import(
-          /* webpackChunkName: "not-found" */
-          '@/pages/not-found'),
-    },
-  ],
+          /* WebpackChunkName: "not-found" */
+          '@/pages/not-found')
+    }
+  ]
 });

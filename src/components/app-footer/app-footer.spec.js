@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { shallowMount } from '@vue/test-utils';
 import AppFooter from './app-footer.vue';
 

@@ -6,7 +6,7 @@ import AppFooter from '@/components/app-footer';
   components: {
     AppFooter
   },
-  name: 'default',
+  name: 'default'
 })
 class Default extends Vue {
   // --------------------------------------------------------------------------
@@ -17,7 +17,7 @@ class Default extends Vue {
   // [Public] Constructor
   // --------------------------------------------------------------------------
 
-  constructor() {
+  public constructor() {
     super();
   }
 
@@ -53,5 +53,5 @@ class Default extends Vue {
 
 export {
   Default as default,
-  Default,
+  Default
 };

@@ -1,13 +1,12 @@
 import { Lookup } from './lookup';
 
-type TransformDelegate<R> = ((value: string|undefined) => R);
+type TransformDelegate<R> = ((value: string | undefined) => R);
 
-export function fromEnv<R extends string|number|boolean = string>(
+export function fromEnv<R extends string | number | boolean = string>(
   key: string,
-  // tslint:disable-next-line: ban-types
-  transform?: TransformDelegate<R>| typeof Number| typeof Boolean
+  transform?: TransformDelegate<R> | typeof Number | typeof Boolean
 ): R {
-  const value = (process.env as Lookup<string|undefined>)[key];
+  const value = (process.env as Lookup<string | undefined>)[key];
 
   switch (transform) {
     case Number:
@@ -21,8 +20,9 @@ export function fromEnv<R extends string|number|boolean = string>(
       const isTrue = value === true.toString();
 
       // Should value not be the string 'true' or 'false', an exception
-      // will be generated. Blocks Truthy parsing.
+      // Will be generated. Blocks Truthy parsing.
       if (!isTrue && value !== false.toString()) {
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
         throw new Error(`fromEnv(): value "${value}" is not a valid Boolean.`);
       }
 

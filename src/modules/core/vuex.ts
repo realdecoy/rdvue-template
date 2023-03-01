@@ -3,16 +3,16 @@ import { Action, getModule, VuexModule } from 'vuex-module-decorators';
 import { ActionDecoratorParams } from 'vuex-module-decorators/dist/types/action';
 
 interface Lookup<Result = unknown> {
-  [key: number]: Result;
-  [key: string]: Result;
+  [key: number]: Result
+  [key: string]: Result
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 interface VuexModuleDef {
-  getModule(): { [key: string]: unknown };
-  getModuleName(): string;
+  getModule(): { [key: string]: unknown }
+  getModuleName(): string
 }
 
-// tslint:disable-next-line:no-any
 type ConstructorOf<C> = new (...args: any[]) => C;
 type UnknownFunction = (...args: unknown[]) => unknown;
 
@@ -20,6 +20,7 @@ type UnknownFunction = (...args: unknown[]) => unknown;
  * Performs the relevant magic to make Vuex Actions and Mutations support
  * multiple parameters.
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export function MultiParamAction<V>(options: ActionDecoratorParams = {}) {
   return (target: object, property: string, descriptor: PropertyDescriptor) => {
     // Save original function.
@@ -32,7 +33,7 @@ export function MultiParamAction<V>(options: ActionDecoratorParams = {}) {
     // Produce by getMultiParamModule via not spreading the supplied args
     // But just passing the Array. This is necessary to allow Vuex actions
     // Which support multiple arguments (one 1 'payload' by default design).
-    descriptor.value = function(this: ThisParameterType<unknown>, args: unknown[]) {
+    descriptor.value = function (this: ThisParameterType<unknown>, args: unknown[]) {
       return originalFn.call(this, ...args);
     };
 
@@ -46,16 +47,15 @@ export function MultiParamAction<V>(options: ActionDecoratorParams = {}) {
 export function getMultiParamModule<StoreType extends VuexModule>(
   moduleClass: ConstructorOf<StoreType>,
   moduleName: string,
-  store: Store<unknown>,
+  store: Store<unknown>
 ) {
   return new Proxy<StoreType>(getModule(moduleClass, store), {
-    // tslint:disable-next-line:no-any
     get(target: Lookup<any>, prop: string | number | symbol) {
       const targetValue = target[prop as string] as unknown;
       let result: unknown;
 
       if (typeof targetValue === 'function') {
-        result = function(this: ThisParameterType<unknown>, ...args: unknown[]) {
+        result = function (this: ThisParameterType<unknown>, ...args: unknown[]) {
           /**
            * Call the original function with the arguments as a single
            * parameter (do not spread array). Vuex expects a single params.
@@ -63,6 +63,7 @@ export function getMultiParamModule<StoreType extends VuexModule>(
            * just before the underlying method gets invoked.
            */
 
+          // eslint-disable-next-line no-invalid-this
           return (targetValue as UnknownFunction).call(this, args);
         };
       } else {
@@ -70,7 +71,7 @@ export function getMultiParamModule<StoreType extends VuexModule>(
       }
 
       return result;
-    },
+    }
   });
 }
 

@@ -1,5 +1,6 @@
-import env from '@/config/env';
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
+import env from '@/config/env';
 
 // ----------------------------------------------------------------------------
 // Module Vars
@@ -12,7 +13,7 @@ class BaseService {
   // --------------------------------------------------------------------------
   // Constructor
   // --------------------------------------------------------------------------
-  constructor(api: AxiosRequestConfig | string) {
+  public constructor(api: AxiosRequestConfig | string) {
     const baseURL = typeof api === 'string' ? api : undefined;
     const overrides = typeof api === 'object' ? api : {};
 
@@ -25,6 +26,25 @@ class BaseService {
     this.api = axios.create({ ...options, ...overrides });
 
     this.init();
+  }
+
+  // --------------------------------------------------------------------------
+  // Event Handlers
+  // --------------------------------------------------------------------------
+  protected onRequest(config: AxiosRequestConfig) {
+    // TODO: override
+  }
+
+  protected onRequestError(error: unknown) {
+    // TODO: override
+  }
+
+  protected onResponse(response: AxiosResponse) {
+    // TODO: override
+  }
+
+  protected onResponseError(error: unknown) {
+    // TODO: override
   }
 
   // --------------------------------------------------------------------------
@@ -53,28 +73,9 @@ class BaseService {
       return Promise.reject(error);
     });
   }
-
-  // --------------------------------------------------------------------------
-  // Event Handlers
-  // --------------------------------------------------------------------------
-  protected onRequest(config: AxiosRequestConfig) {
-    // TODO: override
-  }
-
-  protected onRequestError(error: unknown) {
-    // TODO: override
-  }
-
-  protected onResponse(response: AxiosResponse) {
-    // TODO: override
-  }
-
-  protected onResponseError(error: unknown) {
-    // TODO: override
-  }
 }
 
 export {
-  BaseService,
+  BaseService
 };
 

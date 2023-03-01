@@ -2,7 +2,7 @@ import { Component, Vue } from 'vue-property-decorator';
 
 @Component({
   components: {},
-  name: 'not-found',
+  name: 'not-found'
 })
 class NotFound extends Vue {
   // --------------------------------------------------------------------------
@@ -12,7 +12,7 @@ class NotFound extends Vue {
   // --------------------------------------------------------------------------
   // Constructor
   // --------------------------------------------------------------------------
-  constructor() {
+  public constructor() {
     super();
   }
 
@@ -38,5 +38,5 @@ class NotFound extends Vue {
 
 export {
   NotFound as default,
-  NotFound,
+  NotFound
 };

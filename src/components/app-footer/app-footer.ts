@@ -2,7 +2,7 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component({
   components: {},
-  name: 'app-footer',
+  name: 'app-footer'
 })
 
 
@@ -18,7 +18,7 @@ class AppFooter extends Vue {
   // --------------------------------------------------------------------------
   // Constructor
   // --------------------------------------------------------------------------
-  constructor() {
+  public constructor() {
     super();
   }
 
@@ -44,5 +44,5 @@ class AppFooter extends Vue {
 
 export {
   AppFooter as default,
-  AppFooter,
+  AppFooter
 };

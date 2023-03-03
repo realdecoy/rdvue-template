@@ -2,7 +2,9 @@ import { useAppStore } from '@/stores/app';
 import { storeToRefs } from 'pinia';
 
 export default {
-  setup () {
-    return {}
-  }
-}
+  setup() {
+    const appStore = useAppStore();
+    const { isReady } = storeToRefs(appStore);
+    return { isReady };
+  },
+};

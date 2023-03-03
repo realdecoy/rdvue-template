@@ -1,25 +1,71 @@
 /* eslint-env node */
-require('@rushstack/eslint-patch/modern-module-resolution')
+require('@rushstack/eslint-patch/modern-module-resolution');
 
 module.exports = {
   root: true,
-  'extends': [
+  extends: [
     'plugin:vue/vue3-essential',
     'eslint:recommended',
     '@vue/eslint-config-typescript',
-    '@vue/eslint-config-prettier'
+    '@vue/eslint-config-prettier',
   ],
   overrides: [
     {
-      files: [
-        'cypress/e2e/**/*.{cy,spec}.{js,ts,jsx,tsx}'
-      ],
-      'extends': [
-        'plugin:cypress/recommended'
-      ]
-    }
+      files: ['cypress/e2e/**/*.{cy,spec}.{js,ts,jsx,tsx}'],
+      extends: ['plugin:cypress/recommended'],
+    },
   ],
   parserOptions: {
-    ecmaVersion: 'latest'
-  }
-}
+    ecmaVersion: 'latest',
+  },
+  rules: {
+    // TODO: some of these need to be purged. Review.
+    'no-console': 2,
+    'no-extra-semi': 2,
+    'semi-spacing': 2,
+    'interface-name': 0,
+    'object-literal-sort-keys': 0,
+    'no-var': 2,
+    'no-cond-assign': 2,
+    'no-debugger': 2,
+    'no-duplicate-imports': 2,
+    'no-empty': 2,
+    'no-eval': 2,
+    'no-invalid-this': 2,
+    'no-irregular-whitespace': 2,
+    'no-return-await': 2,
+    'no-trailing-spaces': 2,
+    'no-empty-character-class': 2,
+    'no-unsafe-finally': 2,
+    'no-unused-vars': 2,
+    'no-unused-expressions': 2,
+    'no-undef': 2,
+    'array-type': 0,
+    'require-await': 2,
+    'prefer-arrow-callback': 2,
+    'arrow-spacing': 2,
+    'spaced-comment': 2,
+    curly: 2,
+    complexity: 2,
+    'max-classes-per-file': [2, 1],
+    'max-len': [2, 80],
+    'max-lines': [2, 500],
+    'new-parens': 2,
+    'newline-before-return': 2,
+    'newline-per-chained-call': 2,
+    'only-arrow-functions': 0,
+    'prefer-const': 2,
+    'prefer-object-spread': 2,
+    'prefer-template': 2,
+    radix: 2,
+    'no-else-return': 2,
+    'object-curly-spacing': ['error', 'always'],
+    'space-before-function-paren': 0,
+    'space-within-parens': 0,
+    'no-eq-null': 2,
+    eqeqeq: 2,
+    'valid-typeof': 2,
+    'block-scoped-var': 2,
+    'interface-over-type-literal': 0,
+  },
+};

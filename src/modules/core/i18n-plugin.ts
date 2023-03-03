@@ -1,5 +1,5 @@
 import type { App } from 'vue';
-import { createI18n as vueCreateI18n, type LocaleMessageObject, type LocaleMessages } from 'vue-i18n';
+import { createI18n as vueCreateI18n } from 'vue-i18n';
 
 // ----------------------------------------------------------------------------
 // Module Constants
@@ -10,6 +10,7 @@ const APP_DEFAULT_LOCALE = /*process.env.APP_DEFAULT_LOCALE ??*/ 'en';
 // Module Functions
 // ----------------------------------------------------------------------------
 function getBrowserLocale(countryCodeOnly = false) {
+  let result = null;
   const navigatorLocale =
     // tslint:disable-next-line: strict-type-predicates
     navigator.languages !== undefined
@@ -17,19 +18,24 @@ function getBrowserLocale(countryCodeOnly = false) {
       : navigator.language;
 
   // tslint:disable-next-line: strict-boolean-expressions
-  if (!navigatorLocale) {
-    return undefined;
+  if (
+    navigatorLocale !== null &&
+    navigatorLocale !== undefined &&
+    navigatorLocale.length > 0
+  ) {
+    result = countryCodeOnly
+      ? navigatorLocale.trim().split(/-|_/)[0]
+      : navigatorLocale.trim();
   }
-  const trimmedLocale = countryCodeOnly
-    ? navigatorLocale.trim()
-      .split(/-|_/)[0]
-    : navigatorLocale.trim();
 
-  return trimmedLocale;
+  return result ?? null;
 }
 
 function getAvailableLocales() {
-  const locales = import.meta.glob('@/locales/*.json', { as: 'raw', eager: true });
+  const locales = import.meta.glob('@/locales/*.json', {
+    as: 'raw',
+    eager: true,
+  });
   const localeNames = Object.keys(locales);
 
   return localeNames;
@@ -45,7 +51,10 @@ function getStartingLocale() {
   const availableLocales = getAvailableLocales();
   let result: string;
 
-  if (availableLocales.find((p) => p === browserLocale) !== undefined) {
+  if (
+    browserLocale !== null &&
+    availableLocales.find((p) => p === browserLocale) !== undefined
+  ) {
     result = browserLocale as string;
   } else {
     // tslint:disable-next-line: no-unsafe-any
@@ -56,7 +65,10 @@ function getStartingLocale() {
 }
 
 function loadLocaleMessages() {
-  const locales = import.meta.glob('@/locales/*.json', { as: 'raw', eager: true });
+  const locales = import.meta.glob('@/locales/*.json', {
+    as: 'raw',
+    eager: true,
+  });
   const messages: { [key: string]: {} } = {};
 
   for (const key of Object.keys(locales)) {
@@ -77,12 +89,14 @@ function loadLocaleMessages() {
 export const createI18n = () => ({
   install(app: App) {
     console.log(loadLocaleMessages());
-    app.use(vueCreateI18n({
-      legacy: false,
-      allowComposition: true,
-      locale: getStartingLocale(),
-      fallbackLocale: APP_DEFAULT_LOCALE,
-      messages: loadLocaleMessages()
-    }));
-  }
+    app.use(
+      vueCreateI18n({
+        legacy: false,
+        allowComposition: true,
+        locale: getStartingLocale(),
+        fallbackLocale: APP_DEFAULT_LOCALE,
+        messages: loadLocaleMessages(),
+      })
+    );
+  },
 });

@@ -3,6 +3,6 @@ import { storeToRefs } from 'pinia';
 
 export default {
   setup() {
-    return {}
-  }
-}
+    return {};
+  },
+};

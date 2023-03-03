@@ -1,12 +1,15 @@
-// import env from '@/config/env';
-import axios, { type AxiosInstance, type AxiosRequestConfig, type AxiosResponse } from 'axios';
+import env from '@/configs/env';
+import axios, {
+  type AxiosInstance,
+  type AxiosRequestConfig,
+  type AxiosResponse,
+} from 'axios';
 
 // ----------------------------------------------------------------------------
 // Module Vars
 // ----------------------------------------------------------------------------
 
-//TODO: Fix to use .env import
-const { API_TIMEOUT_MS } = { API_TIMEOUT_MS: 10 } // 15 seconds
+const { API_TIMEOUT_MS } = env; // 30 seconds default in .env
 
 class BaseService {
   protected api: AxiosInstance;
@@ -21,7 +24,7 @@ class BaseService {
     const options = {
       timeout: API_TIMEOUT_MS,
       headers: {},
-      baseURL
+      baseURL,
     };
 
     this.api = axios.create({ ...options, ...overrides });
@@ -35,48 +38,52 @@ class BaseService {
   private init() {
     const { interceptors } = this.api;
 
-    interceptors.request.use((config) => {
-      this.onRequest(config);
+    interceptors.request.use(
+      async (config) => (await this.onRequest(config), config),
+      async (error: unknown) => (
+        await this.onRequestError(error), Promise.reject(error)
+      )
+    );
 
-      return config;
-    }, async (error: unknown) => {
-      this.onRequestError(error);
-
-      return Promise.reject(error);
-    });
-
-    interceptors.response.use((response) => {
-      this.onResponse(response);
-
-      return response;
-    }, async (error: unknown) => {
-      this.onResponseError(error);
-
-      return Promise.reject(error);
-    });
+    interceptors.response.use(
+      async (response) => (await this.onResponse(response), response),
+      async (error: unknown) => (
+        await this.onResponseError(error), Promise.reject(error)
+      )
+    );
   }
 
   // --------------------------------------------------------------------------
   // Event Handlers
   // --------------------------------------------------------------------------
-  protected onRequest(config: AxiosRequestConfig) {
-    // TODO: override
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  protected async onRequest(config: AxiosRequestConfig) {
+    throw new Error(
+      `Abstract method [onRequest] not implemented in class [${this.constructor.name}]`
+    );
   }
 
-  protected onRequestError(error: unknown) {
-    // TODO: override
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  protected async onRequestError(error: unknown) {
+    throw new Error(
+      `Abstract method [onRequestError] not implemented in class [${this.constructor.name}]`
+    );
   }
 
-  protected onResponse(response: AxiosResponse) {
-    // TODO: override
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  protected async onResponse(response: AxiosResponse) {
+    throw new Error(
+      `Abstract method [onResponse] not implemented in class [${this.constructor.name}]`
+    );
   }
 
-  protected onResponseError(error: unknown) {
-    // TODO: override
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  protected async onResponseError(error: unknown) {
+    throw new Error(
+      `Abstract method [onResponseError] not implemented in class [${this.constructor.name}]`
+    );
   }
 }
 
-export {
-  BaseService,
-};
-
+export { BaseService };

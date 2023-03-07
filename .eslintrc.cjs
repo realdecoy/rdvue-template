@@ -37,7 +37,7 @@ module.exports = {
     'no-trailing-spaces': 2,
     'no-empty-character-class': 2,
     'no-unsafe-finally': 2,
-    'no-unused-vars': 2,
+    'no-unused-vars': 1,
     'no-unused-expressions': 2,
     'no-undef': 2,
     'array-type': 0,

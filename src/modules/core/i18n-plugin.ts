@@ -1,10 +1,11 @@
+import env from '@/configs/env';
 import type { App } from 'vue';
 import { createI18n as vueCreateI18n } from 'vue-i18n';
 
 // ----------------------------------------------------------------------------
 // Module Constants
 // ----------------------------------------------------------------------------
-const APP_DEFAULT_LOCALE = /*process.env.APP_DEFAULT_LOCALE ??*/ 'en';
+const APP_DEFAULT_LOCALE = env.APP_DEFAULT_LOCALE;
 
 // ----------------------------------------------------------------------------
 // Module Functions
@@ -88,7 +89,6 @@ function loadLocaleMessages() {
 // ----------------------------------------------------------------------------
 export const createI18n = () => ({
   install(app: App) {
-    console.log(loadLocaleMessages());
     app.use(
       vueCreateI18n({
         legacy: false,

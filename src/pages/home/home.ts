@@ -9,7 +9,7 @@ import {
 import { useI18n } from 'vue-i18n';
 
 // ----------------------------------------------------------------------------
-// Refs
+// Constants
 // ----------------------------------------------------------------------------
 const defaultMessage = ref('Waiting for ready status...');
 const appStore = useAppStore();

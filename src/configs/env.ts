@@ -6,8 +6,11 @@
  *
  * https://vitejs.dev/guide/env-and-mode.html#env-files
  */
-import 'vite/client';
 
 export default {
-  API_TIMEOUT_MS: parseInt(import.meta.env.API_TIMEOUT_MS),
+  API_TIMEOUT_MS: parseInt(import.meta.env.API_TIMEOUT_MS, 10),
+  APP_DEFAULT_LOCALE: import.meta.env.APP_DEFAULT_LOCALE,
 };
+
+// TODO: Envs are not being loaded.
+console.log('Test load API_TIMEOUT_MS value is: ', import.meta.env.API_TIMEOUT_MS);

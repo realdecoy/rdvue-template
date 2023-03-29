@@ -10,9 +10,9 @@
     <!-- Body -->
     <div class="[ grid ]">
       <router-view v-slot="{ Component }">
-        <transition name="fade">
-          <component :is="Component" />
-        </transition>
+        <!-- <transition name="fade"> -->
+        <component :is="Component" />
+        <!-- </transition> -->
       </router-view>
     </div>
 

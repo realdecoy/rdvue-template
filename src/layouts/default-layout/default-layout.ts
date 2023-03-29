@@ -1,34 +1,24 @@
 import { component, mounted, setup, unmounted } from '@/modules/component';
-import { useAppStore } from '@/stores/app';
-import { storeToRefs } from 'pinia';
-import { ref, computed } from 'vue';
 
 // ----------------------------------------------------------------------------
 // Constants
 // ----------------------------------------------------------------------------
-const defaultMessage = ref('Waiting for ready status...');
-const appStore = useAppStore();
 
 // ----------------------------------------------------------------------------
 // Setup
 // ----------------------------------------------------------------------------
 @component({
-  name: 'home-view',
+  name: 'default-layout',
   components: {},
 })
 export default class Home {
   // --------------------------------------------------------------------------
   // Fields
   // --------------------------------------------------------------------------
-  public isReady = storeToRefs(appStore).isReady;
-  public readyMessage = storeToRefs(appStore).readyMessage;
 
   // --------------------------------------------------------------------------
   // Computed
   // --------------------------------------------------------------------------
-  public message = computed(() =>
-    this.isReady.value ? this.readyMessage : defaultMessage
-  );
 
   // --------------------------------------------------------------------------
   // Constructor
@@ -50,8 +40,4 @@ export default class Home {
 
   @unmounted
   onComponentUnMounted() {}
-
-  async onButtonClick() {
-    await appStore.initialize();
-  }
 }

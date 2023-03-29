@@ -1,14 +1,13 @@
 import router, { type AppRouterMetadata } from '@/configs/router';
-import { component, mounted, setup, unmounted } from '@/modules/core';
-import { ref, defineAsyncComponent, shallowRef } from 'vue';
-import { useI18n } from 'vue-i18n';
+import { component, mounted, setup, unmounted } from '@/modules/component';
+import { defineAsyncComponent, shallowRef } from 'vue';
 
 // ----------------------------------------------------------------------------
 
 // ----------------------------------------------------------------------------
 // Constants
 // ----------------------------------------------------------------------------
-const DEFAULT_LAYOUT = 'default';
+const DEFAULT_LAYOUT = 'default-layout';
 
 // ----------------------------------------------------------------------------
 // Component
@@ -18,12 +17,24 @@ const DEFAULT_LAYOUT = 'default';
   components: {},
 })
 export default class App {
-  public layout = shallowRef('default');
-  public t = ref();
+  // --------------------------------------------------------------------------
+  // Fields
+  // --------------------------------------------------------------------------
+  public layout = shallowRef(DEFAULT_LAYOUT);
 
+  // --------------------------------------------------------------------------
+  // Computed
+  // --------------------------------------------------------------------------
+
+  // --------------------------------------------------------------------------
+  // Constructor
+  // --------------------------------------------------------------------------
   constructor() {}
 
-  loadLayout(meta: AppRouterMetadata) {
+  // --------------------------------------------------------------------------
+  // Methods
+  // --------------------------------------------------------------------------
+  private loadLayout(meta: AppRouterMetadata) {
     // Lookup the layout property defined on the route.
     // Fallback to 'default' to load the Default layout component otherwise.
     const { layout: newLayout = DEFAULT_LAYOUT } = meta ?? {};
@@ -35,11 +46,11 @@ export default class App {
     );
   }
 
+  // --------------------------------------------------------------------------
+  // Event Handlers
+  // --------------------------------------------------------------------------
   @setup
   onComponentSetup() {
-    const { t } = useI18n();
-    this.t.value = t;
-
     // import('@/configs/router').then(({ default: router }) => {
     router.beforeResolve((to, from, next) => {
       const meta = to.meta as AppRouterMetadata | undefined;
@@ -58,23 +69,3 @@ export default class App {
   @unmounted
   onComponentUnMounted() {}
 }
-
-// ----------------------------------------------------------------------------
-// Methods
-// ----------------------------------------------------------------------------
-
-// ----------------------------------------------------------------------------
-// Event Handlers
-// ----------------------------------------------------------------------------
-
-// export async function onComponentMounted() {}
-
-// export async function onComponentUnmounted() {}
-
-// ----------------------------------------------------------------------------
-// Component Export
-// ----------------------------------------------------------------------------
-// export default {
-//   components: COMPONENTS,
-//   setup: onSetup,
-// };

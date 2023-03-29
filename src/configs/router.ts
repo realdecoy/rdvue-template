@@ -19,7 +19,7 @@ const router = createRouter({
       path: '/',
       name: 'home',
       meta: {
-        layout: 'default',
+        layout: 'default-layout',
       },
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route

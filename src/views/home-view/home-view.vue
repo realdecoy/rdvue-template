@@ -7,7 +7,8 @@
   <br />
   Ready Message: {{ message }}
   <br />
-  <font-awesome icon="fa-solid fa-user-secret" />
   <br />
-  <button @click="onButtonClick()">Initialize</button>
+  <button @click="onButtonClick()">
+    <font-awesome icon="fa-solid fa-user-secret" />&nbsp;Initialize
+  </button>
 </template>

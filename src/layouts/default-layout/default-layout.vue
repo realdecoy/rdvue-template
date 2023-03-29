@@ -1,5 +1,5 @@
-<style scoped lang="scss" src="./default.scss"></style>
-<script lang="ts" src="./default.ts"></script>
+<style scoped lang="scss" src="./default-layout.scss"></style>
+<script lang="ts" src="./default-layout.ts"></script>
 <template>
   <div class="[ default ][ grid ]">
     <!-- Header -->

@@ -1,29 +1,15 @@
-// ----------------------------------------------------------------------------
-// Types
-
 import { onMounted, onUnmounted } from 'vue';
 import { useI18n } from 'vue-i18n';
-
-// ----------------------------------------------------------------------------
-type ComponentOptions = {
-  name: string;
-  components?: { [key: string]: unknown };
-};
-
-type Prototype = {
-  contructor: Function;
-  [key: string | symbol]: unknown;
-} & Function;
-// eslint-disable-next-line no-unused-vars
-type SetupFunction = (this: any, props: {}, ctx: {}) => void;
-type Callback = (this: any) => void;
-
-// ----------------------------------------------------------------------------
-// Constants
-// ----------------------------------------------------------------------------
-const SETUP_SYMBOL = Symbol();
-const MOUNTED_SYMBOL = Symbol();
-const UNMOUNTED_SYMBOL = Symbol();
+import {
+  MethodDecoratorFactory,
+  MOUNTED_SYMBOL,
+  SETUP_SYMBOL,
+  UNMOUNTED_SYMBOL,
+  type ComponentOptions,
+  type Callback,
+  type Prototype,
+  type SetupFunction,
+} from './shared';
 
 // ----------------------------------------------------------------------------
 // Decorators
@@ -104,66 +90,4 @@ export function setup<Target, Method extends string>(
   desc: PropertyDescriptor
 ): void | TypedPropertyDescriptor<() => void> {
   return MethodDecoratorFactory('setup', SETUP_SYMBOL, prototype, method, desc);
-}
-
-export function mounted<Target, Method extends string>(
-  prototype: Target,
-  method: Method,
-  desc: PropertyDescriptor
-): void | TypedPropertyDescriptor<() => void> {
-  return MethodDecoratorFactory(
-    'mounted',
-    MOUNTED_SYMBOL,
-    prototype,
-    method,
-    desc
-  );
-}
-
-export function unmounted<Target, Method extends string>(
-  prototype: Target,
-  method: Method,
-  desc: PropertyDescriptor
-): void | TypedPropertyDescriptor<() => void> {
-  return MethodDecoratorFactory(
-    'unmounted',
-    UNMOUNTED_SYMBOL,
-    prototype,
-    method,
-    desc
-  );
-}
-
-function MethodDecoratorFactory<Target, Method extends string>(
-  name: string,
-  symbol: Symbol,
-  prototype: Target,
-  method: Method,
-  desc: PropertyDescriptor
-): void | TypedPropertyDescriptor<() => void> {
-  const originalFn = (prototype as Prototype)[method];
-  const hasPreviousSetup =
-    (prototype as Prototype)[symbol as any] !== undefined;
-
-  if (hasPreviousSetup) {
-    throw new Error(
-      `Only once instance of @${name} decorator is valid per component class. \
-Multiple copies found.`
-    );
-  }
-
-  if (typeof originalFn === 'function') {
-    const overrideFn = <TypedPropertyDescriptor<() => void>>(
-      function (this: unknown, ...args: []) {
-        // eslint-disable-next-line no-invalid-this
-        const result = originalFn.apply(this, args);
-
-        return result;
-      }
-    );
-
-    desc.value = overrideFn;
-
-    (prototype as Prototype)[symbol as any] = overrideFn;
-  }
 }

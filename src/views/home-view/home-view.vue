@@ -1,5 +1,5 @@
-<style lang="scss" src="./home.scss" />
-<script lang="ts" src="./home.ts" />
+<style lang="scss" src="./home-view.scss" />
+<script lang="ts" src="./home-view.ts" />
 <template>
   {{ t('message') }}
   <br />

@@ -11,4 +11,5 @@
   <button @click="onButtonClick()">
     <font-awesome icon="fa-solid fa-user-secret" />&nbsp;Initialize
   </button>
+  <SampleElement></SampleElement>
 </template>

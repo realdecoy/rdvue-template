@@ -1,36 +1,20 @@
-import { component, mounted, setup, unmounted } from '@/modules/component';
-import { useAppStore } from '@/stores/app';
-import { storeToRefs } from 'pinia';
-import { ref, computed } from 'vue';
+import { component, mounted, unmounted } from '@/modules/component';
 
 // ----------------------------------------------------------------------------
-// Constants
-// ----------------------------------------------------------------------------
-const defaultMessage = ref('Waiting for ready status...');
-const appStore = useAppStore();
-
-// ----------------------------------------------------------------------------
-// Setup
+// Component
 // ----------------------------------------------------------------------------
 @component({
-  name: 'home-view',
-  components: {
-    SampleElement: () => import('@/components/sampleChild/sampleElement'),
-  },
+  name: 'SampleElement',
+  components: {},
 })
-export default class Home {
+export default class App {
   // --------------------------------------------------------------------------
   // Fields
   // --------------------------------------------------------------------------
-  public isReady = storeToRefs(appStore).isReady;
-  public readyMessage = storeToRefs(appStore).readyMessage;
 
   // --------------------------------------------------------------------------
   // Computed
   // --------------------------------------------------------------------------
-  public message = computed(() =>
-    this.isReady.value ? this.readyMessage : defaultMessage
-  );
 
   // --------------------------------------------------------------------------
   // Constructor
@@ -44,16 +28,10 @@ export default class Home {
   // --------------------------------------------------------------------------
   // Event Handlers
   // --------------------------------------------------------------------------
-  @setup
-  onComponentSetup() {}
 
   @mounted
   onComponentMounted() {}
 
   @unmounted
   onComponentUnMounted() {}
-
-  async onButtonClick() {
-    await appStore.initialize();
-  }
 }

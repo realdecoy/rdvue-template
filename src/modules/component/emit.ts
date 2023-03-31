@@ -1,10 +1,18 @@
-import { MethodDecoratorFactory, MOUNTED_SYMBOL } from './shared';
+import { EMIT_SYMBOL, MethodDecoratorFactory } from './shared';
 
-export function emit<Target, Method extends string>(
-  prototype: Target,
-  method: Method,
-  desc: PropertyDescriptor
-): void | TypedPropertyDescriptor<() => void> {
-  // TODO: implement
-  return void 0;
+export function emit<T = any>(eventName?: string) {
+  return function <Target, Method extends string>(
+    prototype: Target,
+    method: Method,
+    desc: PropertyDescriptor
+  ): void | TypedPropertyDescriptor<() => T> {
+    return MethodDecoratorFactory<Target, Method, T>(
+      'emit',
+      EMIT_SYMBOL,
+      prototype,
+      method,
+      desc,
+      eventName
+    );
+  };
 }

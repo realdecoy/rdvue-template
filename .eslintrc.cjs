@@ -67,5 +67,11 @@ module.exports = {
     'valid-typeof': 2,
     'block-scoped-var': 2,
     'interface-over-type-literal': 0,
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+    ],
   },
 };

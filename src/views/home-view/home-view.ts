@@ -1,59 +1,42 @@
-import { component, mounted, setup, unmounted } from '@/modules/component';
-import { useAppStore } from '@/stores/app';
-import { storeToRefs } from 'pinia';
-import { ref, computed } from 'vue';
-
-// ----------------------------------------------------------------------------
-// Constants
-// ----------------------------------------------------------------------------
-const defaultMessage = ref('Waiting for ready status...');
-const appStore = useAppStore();
+import { Component, Setup, Vue } from 'vue-facing-decorator';
+import { useAppStore, type AppStoreInstance } from '@/stores/app';
+import { useI18n } from 'vue-i18n';
 
 // ----------------------------------------------------------------------------
 // Setup
 // ----------------------------------------------------------------------------
-@component({
-  name: 'home-view',
-  components: {
-    SampleElement: () => import('@/components/sampleChild/sampleElement'),
-  },
-})
-export default class Home {
+@Component({})
+export default class Home extends Vue {
   // --------------------------------------------------------------------------
   // Fields
   // --------------------------------------------------------------------------
-  public isReady = storeToRefs(appStore).isReady;
-  public readyMessage = storeToRefs(appStore).readyMessage;
+  @Setup(() => useAppStore())
+  private AppStore!: AppStoreInstance;
+
+  @Setup(() => useI18n())
+  public i18n!: ReturnType<typeof useI18n>;
 
   // --------------------------------------------------------------------------
   // Computed
   // --------------------------------------------------------------------------
-  public message = computed(() =>
-    this.isReady.value ? this.readyMessage : defaultMessage
-  );
 
-  // --------------------------------------------------------------------------
-  // Constructor
-  // --------------------------------------------------------------------------
-  constructor() {}
+  public get ready() {
+    return this.AppStore.isReady;
+  }
+
+  public get readyMessage() {
+    return this.AppStore.readyMessage;
+  }
+
+  public get message() {
+    return this.ready ? this.readyMessage : 'Waiting for ready status...';
+  }
 
   // --------------------------------------------------------------------------
   // Methods
   // --------------------------------------------------------------------------
 
-  // --------------------------------------------------------------------------
-  // Event Handlers
-  // --------------------------------------------------------------------------
-  @setup
-  onComponentSetup() {}
-
-  @mounted
-  onComponentMounted() {}
-
-  @unmounted
-  onComponentUnMounted() {}
-
   async onButtonClick() {
-    await appStore.initialize();
+    await this.AppStore.initialize();
   }
 }

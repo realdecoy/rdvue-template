@@ -14,13 +14,14 @@ const readyMessage = computed(() => (isReady.value ? 'Ready' : 'Not Ready'));
 // ----------------------------------------------------------------------------
 // Actions
 // ----------------------------------------------------------------------------
-async function initialize() {
+function initialize() {
   isReady.value = true;
 }
 
 // ----------------------------------------------------------------------------
 // Configuration
 // ----------------------------------------------------------------------------
+export interface AppStoreInstance extends ReturnType<typeof useAppStore> {}
 export const useAppStore = defineStore('app', () => {
   return {
     // Exports must be added here to be available on the Store.

@@ -1,5 +1,7 @@
-import router, { type AppRouterMetadata } from '@/configs/router';
-import { component, mounted, setup, unmounted } from '@/modules/component';
+import { Component, Vue, Setup, Model } from 'vue-facing-decorator';
+import { useRouter, type Router } from 'vue-router';
+import DefaultLayout from '@/layouts/default-layout';
+import type { AppRouterMetadata } from '@/configs/router';
 import { defineAsyncComponent, shallowRef } from 'vue';
 
 // ----------------------------------------------------------------------------
@@ -7,33 +9,19 @@ import { defineAsyncComponent, shallowRef } from 'vue';
 // ----------------------------------------------------------------------------
 // Constants
 // ----------------------------------------------------------------------------
+
 const DEFAULT_LAYOUT = 'default-layout';
 
-// ----------------------------------------------------------------------------
-// Component
-// ----------------------------------------------------------------------------
-@component({
-  name: 'App',
-  components: {},
+@Component({
+  components: { DefaultLayout },
 })
-export default class App {
-  // --------------------------------------------------------------------------
-  // Fields
-  // --------------------------------------------------------------------------
-  public layout = shallowRef(DEFAULT_LAYOUT);
+export default class App extends Vue {
+  // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
+  @Setup((_props, _ctx) => useRouter())
+  router!: Router;
 
-  // --------------------------------------------------------------------------
-  // Computed
-  // --------------------------------------------------------------------------
+  public layout = shallowRef(DefaultLayout);
 
-  // --------------------------------------------------------------------------
-  // Constructor
-  // --------------------------------------------------------------------------
-  constructor() {}
-
-  // --------------------------------------------------------------------------
-  // Methods
-  // --------------------------------------------------------------------------
   private loadLayout(meta: AppRouterMetadata) {
     // Lookup the layout property defined on the route.
     // Fallback to 'default' to load the Default layout component otherwise.
@@ -46,13 +34,8 @@ export default class App {
     );
   }
 
-  // --------------------------------------------------------------------------
-  // Event Handlers
-  // --------------------------------------------------------------------------
-  @setup
-  onComponentSetup() {
-    // import('@/configs/router').then(({ default: router }) => {
-    router.beforeResolve((to, from, next) => {
+  mounted() {
+    this.router.beforeResolve((to, from, next) => {
       const meta = to.meta as AppRouterMetadata | undefined;
 
       if (meta !== undefined) {
@@ -62,10 +45,4 @@ export default class App {
       next();
     });
   }
-
-  @mounted
-  onComponentMounted() {}
-
-  @unmounted
-  onComponentUnMounted() {}
 }

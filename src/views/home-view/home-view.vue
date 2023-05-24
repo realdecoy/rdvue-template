@@ -1,9 +1,9 @@
 <style lang="scss" src="./home-view.scss" />
 <script lang="ts" src="./home-view.ts" />
 <template>
-  {{ t('message') }}
+  {{ i18n.t('message') }}
   <br />
-  IsReady: {{ isReady }}
+  IsReady: {{ ready }}
   <br />
   Ready Message: {{ message }}
   <br />
@@ -11,5 +11,4 @@
   <button @click="onButtonClick()">
     <font-awesome icon="fa-solid fa-user-secret" />&nbsp;Initialize
   </button>
-  <SampleElement></SampleElement>
 </template>

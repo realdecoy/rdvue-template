@@ -1,11 +1,16 @@
 import { Component, Setup, Vue } from 'vue-facing-decorator';
 import { useAppStore, type AppStoreInstance } from '@/stores/app';
 import { useI18n } from 'vue-i18n';
+import ParentComponent from '@/components/parent-component';
 
 // ----------------------------------------------------------------------------
 // Setup
 // ----------------------------------------------------------------------------
-@Component({})
+@Component({
+  components: {
+    ParentComponent,
+  },
+})
 export default class Home extends Vue {
   // --------------------------------------------------------------------------
   // Fields

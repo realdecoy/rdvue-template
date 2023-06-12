@@ -19,26 +19,6 @@
   "installDirectory": "components",
   "files": [
     {
-      "source": "index.ts",
-      "target": "index.ts",
-      "content": [
-        {
-          "matchRegex": "__COMPONENT__KEBAB__",
-          "replace": "${componentNameKebab}"
-        }
-      ]
-    },
-    {
-      "source": "component.scss",
-      "target": "${componentNameKebab}.scss",
-      "content": [
-        {
-          "matchRegex": "__COMPONENT__",
-          "replace": "${componentNameKebab}"
-        }
-      ]
-    },
-    {
       "source": "component.ts",
       "target": "${componentNameKebab}.ts",
       "content": [

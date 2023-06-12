@@ -1,12 +1,17 @@
-import { Component, Prop, Vue } from 'vue-property-decorator';
+/* eslint-disable no-console */
+// Import necessary decorators and components from vue-property-decorator
+import {
+  Component,
+  Emit,
+  Inject,
+  Model,
+  Prop,
+  Watch,
+  Vue,
+} from 'vue-facing-decorator';
 
-@Component({
-  components: {},
-  name: '__COMPONENT__KEBAB__',
-})
-
-
-class __COMPONENT__ extends Vue {
+@Component
+export default class __COMPONENT__ extends Vue {
   // --------------------------------------------------------------------------
   // Fields
   // --------------------------------------------------------------------------
@@ -14,13 +19,7 @@ class __COMPONENT__ extends Vue {
   // --------------------------------------------------------------------------
   // Props
   // --------------------------------------------------------------------------
-  @Prop({ default: 'default' }) public customProp!: string;
-  // --------------------------------------------------------------------------
-  // Constructor
-  // --------------------------------------------------------------------------
-  constructor() {
-    super();
-  }
+  @Prop() public msg!: string;
 
   // --------------------------------------------------------------------------
   // Accessors
@@ -37,12 +36,7 @@ class __COMPONENT__ extends Vue {
   // --------------------------------------------------------------------------
   // Lifecycle Hooks
   // --------------------------------------------------------------------------
-  public mounted() {
+  mounted() {
     // TODO: stuff to do when this component loads.
   }
 }
-
-export {
-  __COMPONENT__ as default,
-  __COMPONENT__,
-};

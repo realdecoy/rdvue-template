@@ -1,49 +1,37 @@
-import { Component, Vue } from 'vue-property-decorator';
+/* eslint-disable no-console */
+// Import necessary decorators and components from vue-property-decorator
+import {
+  Component,
+  Emit,
+  Inject,
+  Model,
+  Prop,
+  Watch,
+  Vue,
+} from 'vue-facing-decorator';
 
-@Component({
-  components: {},
-  name: '__LAYOUT__KEBAB__',
-})
-class __LAYOUT__ extends Vue {
+@Component
+export default class __LAYOUT__ extends Vue {
   // --------------------------------------------------------------------------
-  // [Private] Fields
-  // --------------------------------------------------------------------------
-
-  // --------------------------------------------------------------------------
-  // [Public] Constructor
-  // --------------------------------------------------------------------------
-
-  constructor() {
-    super();
-  }
-
-  // --------------------------------------------------------------------------
-  // [Public] Accessors
+  // Fields
   // --------------------------------------------------------------------------
 
   // --------------------------------------------------------------------------
-  // [Public] Methods
+  // Accessors
   // --------------------------------------------------------------------------
 
   // --------------------------------------------------------------------------
-  // [Private] Event Handlers
+  // Methods
   // --------------------------------------------------------------------------
 
   // --------------------------------------------------------------------------
-  // [Private] Methods
+  // Event Handlers
   // --------------------------------------------------------------------------
 
   // --------------------------------------------------------------------------
-  // [Private] Lifecycle Hooks
+  // Lifecycle Hooks
   // --------------------------------------------------------------------------
-
-  private mounted() {
+  mounted() {
     // TODO: stuff to do when this component loads.
-
   }
 }
-
-export {
-  __LAYOUT__ as default,
-  __LAYOUT__,
-};

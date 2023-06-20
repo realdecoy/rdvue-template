@@ -7,7 +7,6 @@ import { createFontAwesome, createI18n } from '@/modules/core';
 import App from './components/@app';
 import router from './configs/router';
 import '@/assets/theme/@main.scss';
-import '@/assets/tailwind.css';
 
 export const app = createApp(App);
 

@@ -1,3 +1,10 @@
+/**
+ * Entry point for application-wide CSS.
+ */
+@import "tailwind.css";
+@import "colors";
+
+
 html,
 body {
   /* Normalizes 1rem to be equal to 10px. It's complicted. */

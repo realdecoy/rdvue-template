@@ -1,0 +1,42 @@
+{
+  "version": 2,
+  "name": "page",
+  "description": "Generate a basic page.",
+  "arguments": [
+    {
+      "name": "pageNameKebab",
+      "type": "string",
+      "description": "the name for the generated page. (e.g. hello-world)"
+    },
+    {
+      "name": "pageName",
+      "type": "string",
+      "description": "the name for the generated page.",
+      "isPrivate": true
+    }
+  ],
+  "sourceDirectory": "./",
+  "installDirectory": "views",
+  "files": [
+    {
+      "source": "page.ts",
+      "target": "${pageNameKebab}.ts",
+      "content": [
+        {
+          "matchRegex": "__PAGE__",
+          "replace": "${pageName}"
+        }
+      ]
+    },
+    {
+      "source": "page.vue",
+      "target": "${pageNameKebab}.vue",
+      "content": [
+        {
+          "matchRegex": "__PAGE__",
+          "replace": "${pageNameKebab}"
+        }
+      ]
+    }
+  ]
+}

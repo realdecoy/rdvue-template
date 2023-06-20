@@ -1,0 +1,36 @@
+{
+  "version": 2,
+  "name": "store",
+  "description": "Generate a basic Vue Store module.",
+  "arguments": [
+    {
+      "name": "storeModuleNameKebab",
+      "type": "string",
+      "description": "The name in Kebab-case for the generated store module. (e.g. user-data)"
+    },
+    {
+      "name": "storeModuleName",
+      "type": "string",
+      "description": "the name for the generated store module.",
+      "isPrivate": true
+    }
+  ],
+  "sourceDirectory": "./",
+  "installDirectory": "stores",
+  "files": [
+    {
+      "source": "module.ts",
+      "target": "${storeModuleNameKebab}.ts",
+      "content": [
+        {
+          "matchRegex": "__STORE_MODULE__",
+          "replace": "${storeModuleName}"
+        },
+        {
+          "matchRegex": "__STORE__",
+          "replace": "${storeModuleNameKebab}"
+        }
+      ]
+    }
+  ]
+}

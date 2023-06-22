@@ -1,11 +1,8 @@
 <style scoped lang="scss" src="./default-layout.scss"></style>
 <script lang="ts" src="./default-layout.ts"></script>
 <template>
-  <div class="[ default ][ grid ]">
+  <div class="[ default ][ grid ][ h-screen ]">
     <!-- Header -->
-    <div class="[ h-12 ]">
-      <a href="#">Home</a>
-    </div>
 
     <!-- Body -->
     <div class="[ grid ]">
@@ -17,6 +14,6 @@
     </div>
 
     <!-- Footer -->
-    <div class="[ h-12 ]">Copyright {{ new Date().getFullYear() }}</div>
+    <div class="[ h-12 mt-auto ] [ text-center ]">Copyright {{ new Date().getFullYear() }}</div>
   </div>
 </template>

@@ -1,0 +1,42 @@
+{
+  "version": 2,
+  "name": "localization",
+  "group": false,
+  "description": "Generate files needed for basic localization.",
+  "sourceDirectory": "./",
+  "installDirectory": "./",
+  "files": [
+    {
+      "source": "config/i18n.ts",
+      "target": "modules/rdvue/i18n-plugin.ts"
+    },
+    {
+      "source": "pages/hello-i18n/hello-i18n.vue",
+      "target": "pages/hello-i18n/hello-i18n.vue"
+    },
+    {
+      "source": "locales/en.json",
+      "target": "locales/en.json"
+    },
+    {
+      "source": "locales/es.json",
+      "target": "locales/es.json"
+    }
+  ],
+  "packages": {
+    "dependencies": [
+      "vue-i18n"
+    ]
+  },
+  "modules": {
+    "i18n": "`require('../src/config/i18n').default`"
+  },
+  "main": {
+    "modules": [
+      "  i18n"
+    ],
+    "imports": [
+      "import i18n from '@/config/i18n';"
+    ]
+  }
+}

@@ -87,7 +87,7 @@ function loadLocaleMessages() {
 // ----------------------------------------------------------------------------
 // Module Exports
 // ----------------------------------------------------------------------------
-export const createI18n = () => ({
+const createI18n = () => ({
   install(app: App) {
     app.use(
       vueCreateI18n({
@@ -100,3 +100,10 @@ export const createI18n = () => ({
     );
   },
 });
+
+const hasCallableModule = true;
+
+export {
+  hasCallableModule,
+  createI18n
+}

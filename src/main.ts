@@ -8,9 +8,9 @@ import App from './components/@app';
 import router from './configs/router';
 import '@/assets/theme/@main.scss';
 import '@/modules/rdvue/components/styles';
-// @ts-expect-error: Incase bamboo file is empty and not recognized as a module
+// eslint-disable-next-line Incase bamboo file is empty and not recognized as a module
 import * as RdvueModules from '@/modules/rdvue';
-// @ts-expect-error: Incase bamboo file is empty and not recognized as a module
+// eslint-disable-next-line Incase bamboo file is empty and not recognized as a module
 import * as RdvueComponents from '@/modules/rdvue/components';
 
 export const app = createApp(App);
@@ -23,7 +23,10 @@ for (const [key, component] of Object.entries(RdvueComponents)) {
 }
 
 for (const [key, module] of Object.entries(RdvueModules)) {
-    if(module) {
+    if((module as any).hasCallableModule) {
+        const functionName = Object.keys(module)[1];
+        app.use((module as any)[functionName]());
+    } else {
         app.use(module as any);
     }
 }

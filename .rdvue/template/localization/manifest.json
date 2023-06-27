@@ -29,14 +29,6 @@
     ]
   },
   "modules": {
-    "i18n": "`require('../src/config/i18n').default`"
-  },
-  "main": {
-    "modules": [
-      "  i18n"
-    ],
-    "imports": [
-      "import i18n from '@/config/i18n';"
-    ]
+    "rdvue/index.ts": "export * from './i18n-plugin';"
   }
 }

@@ -56,7 +56,8 @@ const config: Configuration = smp.wrap({
     new VueLoaderPlugin(),
     new CopyWebpackPlugin({
       patterns: [
-        { from: './src/assets/', to: './assets/img/' }
+        { from: './src/assets/', to: './assets/img/' },
+        { from: './public/env.js', to: './env.js' },
       ]
     }),
     // tslint:disable-next-line: no-unsafe-any

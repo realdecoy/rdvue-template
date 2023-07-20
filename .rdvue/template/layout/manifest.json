@@ -29,26 +29,6 @@
       ]
     },
     {
-      "source": "index.ts",
-      "target": "index.ts",
-      "content": [
-        {
-          "matchRegex": "__LAYOUT__KEBAB__",
-          "replace": "${layoutNameKebab}"
-        }
-      ]
-    },
-    {
-      "source": "layout.scss",
-      "target": "${layoutNameKebab}.scss",
-      "content": [
-        {
-          "matchRegex": "__LAYOUT__",
-          "replace": "${layoutNameKebab}"
-        }
-      ]
-    },
-    {
       "source": "layout.ts",
       "target": "${layoutNameKebab}.ts",
       "content": [
@@ -59,16 +39,6 @@
         {
           "matchRegex": "__LAYOUT__",
           "replace": "${layoutName}"
-        }
-      ]
-    },
-    {
-      "source": "layout.vue",
-      "target": "${layoutNameKebab}.vue",
-      "content": [
-        {
-          "matchRegex": "__LAYOUT__",
-          "replace": "${layoutNameKebab}"
         }
       ]
     },

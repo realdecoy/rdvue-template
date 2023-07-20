@@ -1,28 +1,33 @@
-import { Module, VuexModule, Mutation } from 'vuex-module-decorators';
-import { getMultiParamModule, MultiParamAction } from '@/modules/core';
-import store from './index';
+import { ref, computed } from 'vue';
+import { defineStore } from 'pinia';
 
-const MODULE_NAME = '__STORE_MODULE__';
+// ----------------------------------------------------------------------------
+// State
+// ----------------------------------------------------------------------------
+const isReady = ref(false);
 
-@Module({ namespaced: true, name: MODULE_NAME, dynamic: true, store })
-class Store extends VuexModule {
+// ----------------------------------------------------------------------------
+// Getters
+// ----------------------------------------------------------------------------
+const readyMessage = computed(() => (isReady.value ? 'Ready' : 'Not Ready'));
 
-    // ------------------------------------------------------------------------
-    // Getters
-    // ------------------------------------------------------------------------
-
-    // ------------------------------------------------------------------------
-    // Actions
-    // ------------------------------------------------------------------------
-
-    // ------------------------------------------------------------------------
-    // Mutations
-    // ------------------------------------------------------------------------
-
+// ----------------------------------------------------------------------------
+// Actions
+// ----------------------------------------------------------------------------
+function initialize() {
+  isReady.value = true;
 }
 
-const __STORE_MODULE__ = getMultiParamModule<Store>(Store, MODULE_NAME, store);
-
-export {
-    __STORE_MODULE__
-};
+// ----------------------------------------------------------------------------
+// Configuration
+// ----------------------------------------------------------------------------
+export interface __STORE_MODULE__Instance
+  extends ReturnType<typeof use__STORE_MODULE__> {}
+export const use__STORE_MODULE__ = defineStore('__STORE__', () => {
+  return {
+    // Exports must be added here to be available on the Store.
+    readyMessage,
+    isReady,
+    initialize,
+  };
+});

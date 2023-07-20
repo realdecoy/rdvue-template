@@ -2,7 +2,8 @@
   "version": 2,
   "name": "page",
   "description": "Generate a basic page.",
-  "arguments": [{
+  "arguments": [
+    {
       "name": "pageNameKebab",
       "type": "string",
       "description": "the name for the generated page. (e.g. hello-world)"
@@ -15,41 +16,27 @@
     }
   ],
   "sourceDirectory": "./",
-  "installDirectory": "pages",
-  "files": [{
-      "source": "index.ts",
-      "target": "index.ts",
-      "content": [{
-        "matchRegex": "__PAGE__KEBAB__",
-        "replace": "${pageNameKebab}"
-      }]
-    },
-    {
-      "source": "page.scss",
-      "target": "${pageNameKebab}.scss",
-      "content": [{
-        "matchRegex": "__PAGE__",
-        "replace": "${pageNameKebab}"
-      }]
-    },
+  "installDirectory": "views",
+  "files": [
     {
       "source": "page.ts",
       "target": "${pageNameKebab}.ts",
-      "content": [{
-        "matchRegex": "__PAGE__KEBAB__",
-        "replace": "${pageNameKebab}"
-      }, {
-        "matchRegex": "__PAGE__",
-        "replace": "${pageName}"
-      }]
+      "content": [
+        {
+          "matchRegex": "__PAGE__",
+          "replace": "${pageName}"
+        }
+      ]
     },
     {
       "source": "page.vue",
       "target": "${pageNameKebab}.vue",
-      "content": [{
-        "matchRegex": "__PAGE__",
-        "replace": "${pageNameKebab}"
-      }]
+      "content": [
+        {
+          "matchRegex": "__PAGE__",
+          "replace": "${pageNameKebab}"
+        }
+      ]
     }
   ]
 }

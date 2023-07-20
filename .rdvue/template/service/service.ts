@@ -1,5 +1,5 @@
 import { AxiosResponse } from 'axios';
-import { BaseService } from './_base';
+import { BaseService } from './@base';
 
 type ServiceResult = {
   success: boolean;
@@ -23,7 +23,7 @@ class __SERVICE__ extends BaseService {
   // --------------------------------------------------------------------------
   constructor() {
     super({
-      baseURL: ''
+      baseURL: '',
     });
   }
 
@@ -61,7 +61,6 @@ class __SERVICE__ extends BaseService {
   // --------------------------------------------------------------------------
   // [Private] Methods
   // --------------------------------------------------------------------------
-
 }
 
 // ----------------------------------------------------------------------------
@@ -70,7 +69,4 @@ class __SERVICE__ extends BaseService {
 
 const service = new __SERVICE__();
 
-export {
-  service as default,
-  service as __SERVICE__,
-};
+export { service as default, service as __SERVICE__ };

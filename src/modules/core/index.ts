@@ -1,3 +1,2 @@
-export * from './env';
-export * from './lookup';
-export * from './vuex';
+export * from './font-awesome-plugin';
+export * from './i18n-plugin';

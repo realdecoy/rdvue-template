@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "name": "element-plus",
+  "description": "Generate files needed for the Element Plus UI Library.",
+  "sourceDirectory": "./",
+  "installDirectory": "./",
+  "files": [
+    {
+      "source": "element-plus.ts",
+      "target": "modules/rdvue/element-plus.ts"
+    },
+    {
+      "source": "element-plus-icons.ts",
+      "target": "modules/rdvue/components/element-plus-icons.ts"
+    }
+  ],
+  "packages": {
+    "dependencies": [
+      "@element-plus/icons-vue",
+      "element-plus"
+    ]
+  },
+  "modules": {
+    "rdvue/index.ts": "export * from './element-plus';",
+    "rdvue/components/index.ts": "export * from './element-plus-icons';",
+    "rdvue/components/styles.ts": "import 'element-plus/dist/index.css';"
+  }
+}

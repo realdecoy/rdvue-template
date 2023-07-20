@@ -1,20 +1,10 @@
-import { Component, Vue } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-facing-decorator';
 
-@Component({
-  components: {},
-  name: '__PAGE__KEBAB__',
-})
-class __PAGE__ extends Vue {
+@Component
+export default class __PAGE__ extends Vue {
   // --------------------------------------------------------------------------
   // Fields
   // --------------------------------------------------------------------------
-
-  // --------------------------------------------------------------------------
-  // Constructor
-  // --------------------------------------------------------------------------
-  constructor() {
-    super();
-  }
 
   // --------------------------------------------------------------------------
   // Accessors
@@ -31,12 +21,7 @@ class __PAGE__ extends Vue {
   // --------------------------------------------------------------------------
   // Lifecycle Hooks
   // --------------------------------------------------------------------------
-  public mounted() {
+  mounted() {
     // TODO: stuff to do when this component loads.
   }
 }
-
-export {
-  __PAGE__ as default,
-  __PAGE__,
-};

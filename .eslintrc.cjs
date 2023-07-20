@@ -48,7 +48,7 @@ module.exports = {
     curly: 2,
     complexity: 2,
     'max-classes-per-file': [2, 1],
-    'max-len': [1, 80],
+    'max-len': [1, 120],
     'max-lines': [1, 500],
     'new-parens': 2,
     'newline-before-return': 2,
@@ -73,5 +73,9 @@ module.exports = {
         endOfLine: 'auto',
       },
     ],
+  },
+  env: {
+    node: true,
+    commonjs: true,
   },
 };

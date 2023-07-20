@@ -4,6 +4,7 @@ import {
   type RouteRecordRaw,
 } from 'vue-router';
 
+import Home from '@/views/home-view/home-view.vue';
 export type AppRouterMetadata = {
   layout?: string;
 };
@@ -21,10 +22,7 @@ const router = createRouter({
       meta: {
         layout: 'default-layout',
       },
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/home-view'),
+      component: Home,
     },
   ],
 });

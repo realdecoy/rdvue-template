@@ -21,7 +21,8 @@ function initialize() {
 // ----------------------------------------------------------------------------
 // Configuration
 // ----------------------------------------------------------------------------
-export interface __STORE_MODULE__Instance extends ReturnType<typeof use__STORE_MODULE__> { }
+export interface __STORE_MODULE__Instance
+  extends ReturnType<typeof use__STORE_MODULE__> {}
 export const use__STORE_MODULE__ = defineStore('__STORE__', () => {
   return {
     // Exports must be added here to be available on the Store.

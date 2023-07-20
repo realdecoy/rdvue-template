@@ -1,4 +1,4 @@
-import { Component, Vue, Setup, Model } from 'vue-facing-decorator';
+import { Component, Vue, Setup } from 'vue-facing-decorator';
 import { useRouter, type Router } from 'vue-router';
 import DefaultLayout from '@/layouts/default-layout';
 import type { AppRouterMetadata } from '@/configs/router';

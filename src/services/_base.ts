@@ -1,5 +1,9 @@
 import env from '@/config/env';
-import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
+import axios, {
+  type AxiosInstance,
+  type AxiosRequestConfig,
+  type AxiosResponse,
+} from 'axios';
 
 // ----------------------------------------------------------------------------
 // Module Vars
@@ -19,7 +23,7 @@ class BaseService {
     const options = {
       timeout: API_TIMEOUT_MS,
       headers: {},
-      baseURL
+      baseURL,
     };
 
     this.api = axios.create({ ...options, ...overrides });
@@ -33,25 +37,33 @@ class BaseService {
   private init() {
     const { interceptors } = this.api;
 
-    interceptors.request.use((config) => {
-      this.onRequest(config);
+    interceptors.request.use(
+      (config) => {
+        this.onRequest(config);
 
-      return config;
-    }, async (error: unknown) => {
-      this.onRequestError(error);
+        return config;
+      },
+      // eslint-disable-next-line require-await
+      async (error: unknown) => {
+        this.onRequestError(error);
 
-      return Promise.reject(error);
-    });
+        return Promise.reject(error);
+      }
+    );
 
-    interceptors.response.use((response) => {
-      this.onResponse(response);
+    interceptors.response.use(
+      (response) => {
+        this.onResponse(response);
 
-      return response;
-    }, async (error: unknown) => {
-      this.onResponseError(error);
+        return response;
+      },
+      // eslint-disable-next-line require-await
+      async (error: unknown) => {
+        this.onResponseError(error);
 
-      return Promise.reject(error);
-    });
+        return Promise.reject(error);
+      }
+    );
   }
 
   // --------------------------------------------------------------------------
@@ -74,7 +86,4 @@ class BaseService {
   }
 }
 
-export {
-  BaseService,
-};
-
+export { BaseService };

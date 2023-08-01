@@ -1,6 +1,8 @@
 import { Component, Vue } from 'vue-facing-decorator';
 
-@Component
+@Component({
+  components: {},
+})
 export default class __PAGE__ extends Vue {
   // --------------------------------------------------------------------------
   // Fields

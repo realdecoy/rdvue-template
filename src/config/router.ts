@@ -4,7 +4,7 @@ import {
   type RouteRecordRaw,
 } from 'vue-router';
 
-import Home from '@/views/home-view/home-view.vue';
+import HelloWorld from '@/views/hello-world/hello-world.vue';
 export type AppRouterMetadata = {
   layout?: string;
 };
@@ -22,7 +22,7 @@ const router = createRouter({
       meta: {
         layout: 'default-layout',
       },
-      component: Home,
+      component: HelloWorld,
     },
   ],
 });

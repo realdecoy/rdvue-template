@@ -1,5 +1,5 @@
-<style lang="scss" src="./hello-world.scss"></style>
-<script lang="ts" src="./hello-world.ts"></script>
+<style lang="scss" src="./hello-world.scss" />
+<script lang="ts" src="./hello-world.ts" />
 <template>
   <div class="[ hello-world ][ grid ]">
     <h1 class="[ text-center ]">Vue Starter Project</h1>
@@ -8,7 +8,9 @@
       class="[ logo ][ mx-auto ][ mt-8 ][ w-40 ]"
     />
     <div class="[ call-sign ][ grid grid-cols-2 ][ mt-4 ]">
-      <div class="[ powered-by ][ text-right text-typography-light ][ border border-border-light border-t-0 border-l-0 border-b-0 ][ pr-2 ]">
+      <div
+        class="[ powered-by ][ text-right text-typography-light ][ border border-border-light border-t-0 border-l-0 border-b-0 ][ pr-2 ]"
+      >
         powered
         <br />by
       </div>
@@ -16,7 +18,9 @@
         <a target="_blank" href="https://www.npmjs.com/package/rdvue">rdvue</a>
       </div>
     </div>
-    <div class="[ hello-world-content ][ grid grid-cols-2 grid-flow-col ][ p-8 pt-16 ][ my-0 mx-auto ][ max-w-6xl ]">
+    <div
+      class="[ hello-world-content ][ grid grid-cols-2 grid-flow-col ][ p-8 pt-16 ][ my-0 mx-auto ][ max-w-6xl ]"
+    >
       <div class="[ description ][ text-base text-left ]">
         <h3 class="[ mb-2 ]">Summary</h3>
         <span class="[ leading-6 ]">
@@ -36,16 +40,20 @@
             vue-router
             <span class="[ sub-text ][ text-typography-light ]">-</span>
             <span class="desc">
-              in-app page navigation (<a href="https://router.vuejs.org/"
+              in-app page navigation (<a
+                target="_blank"
+                href="https://router.vuejs.org/"
                 >read more</a
               >)
             </span>
           </li>
           <li class="[ leading-6 ]">
-            vuex
+            pinia
             <span class="[ sub-text ][ text-typography-light ]">-</span>
             <span class="desc">
-              state management for vue (<a href="https://vuex.vuejs.org/"
+              state management for vue 3 (<a
+                target="_blank"
+                href="https://pinia.vuejs.org/introduction.html"
                 >read more</a
               >)
             </span>
@@ -54,7 +62,9 @@
             sass
             <span class="[ sub-text ][ text-typography-light ]">-</span>
             <span class="desc">
-              css extension library (<a href="https://sass-lang.com/"
+              css extension library (<a
+                target="_blank"
+                href="https://sass-lang.com/"
                 >read more</a
               >)
             </span>
@@ -63,7 +73,9 @@
             tailwind
             <span class="[ sub-text ][ text-typography-light ]">-</span>
             <span class="desc">
-              css framework (<a href="https://tailwindcss.com/">read more</a>)
+              css framework (<a target="_blank" href="https://tailwindcss.com/"
+                >read more</a
+              >)
             </span>
           </li>
           <li class="[ leading-6 ]">
@@ -71,6 +83,7 @@
             <span class="[ sub-text ][ text-typography-light ]">-</span>
             <span class="desc">
               typechecking for javascript (<a
+                target="_blank"
                 href="https://www.typescriptlang.org/"
                 >read more</a
               >)
@@ -82,6 +95,7 @@
             <span class="desc">
               promise based http client for browser and node (<a
                 href="https://github.com/axios/axios/"
+                target="_blank"
                 >read more</a
               >)
             </span>

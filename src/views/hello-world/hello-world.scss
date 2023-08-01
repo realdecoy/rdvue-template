@@ -6,20 +6,20 @@
     a:hover {
         @apply text-typography-light;
     }
-
+  
     .hello-world-content {
         @media only screen and (max-width: 800px) {
             grid-template-columns: 1fr;
             grid-auto-flow: row;
         }
     }
-
+  
     .features {
         @media only screen and (max-width: 800px) {
             margin-top: 2rem;
             margin-left: 0;
         }
-
+  
         ul li::before {
             content: "\25A0";
             @apply text-typography-success; // vue-green
@@ -29,4 +29,4 @@
             margin-left: -1em;
         }
     }
-}
+  }

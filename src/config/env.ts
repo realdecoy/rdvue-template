@@ -10,7 +10,8 @@ type Env = typeof env & typeof envDev & typeof envProd;
 // ----------------------------------------------------------------------------
 // Module Vars
 // ----------------------------------------------------------------------------
-const { NODE_ENV } = import.meta.env;
+const { NODE_ENV, VITE_API_TIMEOUT_MS, VITE_APP_DEFAULT_LOCALE } = import.meta
+  .env;
 const IS_DEV = NODE_ENV !== 'production';
 
 const env = {
@@ -21,7 +22,8 @@ const env = {
     LOGO: '/assets/img/brand-logo.png',
   },
   settings: {
-    API_TIMEOUT_MS: 15000,
+    API_TIMEOUT_MS: parseInt(VITE_API_TIMEOUT_MS || '15000', 10), // Fallback to default 15000 if not set
+    APP_DEFAULT_LOCALE: VITE_APP_DEFAULT_LOCALE || 'en-US', // Add a default value if needed
   },
 };
 
@@ -31,3 +33,6 @@ const mergedEnv = merge([env, IS_DEV ? envDev : envProd]) as Env;
 // Module Exports
 // ----------------------------------------------------------------------------
 export { mergedEnv as default, IS_DEV };
+
+// Optional: If you want to test the loading of the environment variable
+console.log('Test load API_TIMEOUT_MS value is: ', VITE_API_TIMEOUT_MS);

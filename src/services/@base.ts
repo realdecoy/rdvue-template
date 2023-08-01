@@ -1,4 +1,4 @@
-import env from '@/configs/env';
+import env from '@/config/env';
 import axios, {
   type AxiosInstance,
   type AxiosRequestConfig,
@@ -9,7 +9,7 @@ import axios, {
 // Module Vars
 // ----------------------------------------------------------------------------
 
-const { API_TIMEOUT_MS } = env; // 30 seconds default in .env
+const { API_TIMEOUT_MS } = env.settings; // 30 seconds default in .env
 
 class BaseService {
   protected api: AxiosInstance;

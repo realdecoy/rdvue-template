@@ -5,7 +5,7 @@ import { createApp } from 'vue';
 import { createPinia } from 'pinia';
 import { createFontAwesome, createI18n } from '@/modules/core';
 import App from './components/@app';
-import router from './configs/router';
+import router from './config/router';
 import '@/assets/theme/@main.scss';
 import '@/modules/rdvue/components/styles';
 

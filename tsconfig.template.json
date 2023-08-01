@@ -1,0 +1,12 @@
+// tsconfig.template.json
+{
+  "extends": "@vue/tsconfig/tsconfig.web.json",
+  "include": ["template/**/*", "template/**/*.vue"],
+  "exclude": ["template/**/__tests__/*"],
+  "compilerOptions": {
+    "composite": true,
+    "types": ["node"],
+    "verbatimModuleSyntax": true,
+    "ignoreDeprecations": "5.0"
+  }
+}

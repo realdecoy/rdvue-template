@@ -1,4 +1,4 @@
-import env from '@/configs/env';
+import env from '@/config/env';
 import type { App } from 'vue';
 import { createI18n as vueCreateI18n } from 'vue-i18n';
 

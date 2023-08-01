@@ -1,45 +1,30 @@
-/* eslint-disable no-unused-vars */
-import { createRouter, createWebHistory } from 'vue-router';
+import {
+  createRouter,
+  createWebHistory,
+  type RouteRecordRaw,
+} from 'vue-router';
 
-// tslint:disable-next-line
-const { default: generatedRoutes } = require('../../.rdvue/routes.js');
+import Home from '@/views/home-view/home-view.vue';
+export type AppRouterMetadata = {
+  layout?: string;
+};
 
-export enum Page {
-  Hello = 'hello-world',
-  NotFound = 'not-found',
-}
-
-const routes = [
-  ...generatedRoutes,
-  {
-    path: '/',
-    name: Page.Hello,
-    meta: {
-      layout: 'default',
-    },
-    component: () =>
-      import(
-        /* webpackChunkName: "hello-world" */
-        '@/pages/hello-world'
-      ),
-  },
-  {
-    path: '/:pathMatch(.*)*',
-    name: Page.NotFound,
-    meta: {
-      layout: 'default',
-    },
-    component: () =>
-      import(
-        /* webpackChunkName: "not-found" */
-        '@/pages/not-found'
-      ),
-  },
-];
+type AppRouteRecordRaw = RouteRecordRaw & {
+  meta: AppRouterMetadata;
+};
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes,
+  history: createWebHistory(import.meta.env.BASE_URL),
+  routes: <[AppRouteRecordRaw]>[
+    {
+      path: '/',
+      name: 'home',
+      meta: {
+        layout: 'default-layout',
+      },
+      component: Home,
+    },
+  ],
 });
 
 export default router;

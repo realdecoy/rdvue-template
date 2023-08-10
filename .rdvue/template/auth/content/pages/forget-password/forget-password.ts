@@ -1,5 +1,4 @@
-import Vue from 'vue';
-import Component from 'vue-class-component';
+import { Vue, Component } from 'vue-facing-decorator';
 import AuthService from '@/services/auth';
 
 @Component({
@@ -16,9 +15,7 @@ class ForgetPassword extends Vue {
   // [Public] Constructor
   // --------------------------------------------------------------------------
 
-  constructor() {
-    super();
-  }
+
 
   // --------------------------------------------------------------------------
   // [Public] Accessors

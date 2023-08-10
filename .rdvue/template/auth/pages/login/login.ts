@@ -1,5 +1,4 @@
-import Vue from 'vue';
-import Component from 'vue-class-component';
+import { Component, Vue } from 'vue-facing-decorator';
 import User from '@/model/user';
 import AuthService from '@/services/auth';
 
@@ -16,10 +15,6 @@ class Login extends Vue {
   // --------------------------------------------------------------------------
   // [Public] Constructor
   // --------------------------------------------------------------------------
-
-  constructor() {
-    super();
-  }
 
   // --------------------------------------------------------------------------
   // [Public] Accessors

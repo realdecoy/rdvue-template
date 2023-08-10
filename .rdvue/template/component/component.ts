@@ -10,7 +10,10 @@ import {
   Vue,
 } from 'vue-facing-decorator';
 
-@Component({})
+@Component({
+  name: '__COMPONENT__',
+  components: {},
+})
 export default class __COMPONENT__ extends Vue {
   // --------------------------------------------------------------------------
   // Fields

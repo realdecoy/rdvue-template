@@ -5,6 +5,7 @@ import {
 } from 'vue-router';
 
 import HelloWorld from '@/views/hello-world/hello-world.vue';
+import NotFound from '@/views/not-found/not-found.vue';
 export type AppRouterMetadata = {
   layout?: string;
 };
@@ -15,7 +16,7 @@ type AppRouteRecordRaw = RouteRecordRaw & {
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes: <[AppRouteRecordRaw]>[
+  routes: <AppRouteRecordRaw[]>[
     {
       path: '/',
       name: 'home',
@@ -23,6 +24,14 @@ const router = createRouter({
         layout: 'default-layout',
       },
       component: HelloWorld,
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'not-found',
+      meta: {
+        layout: 'default-layout',
+      },
+      component: NotFound,
     },
   ],
 });

@@ -1,5 +1,5 @@
-import { Component, Vue } from 'vue-property-decorator';
-
+import { Component, Vue, Setup } from 'vue-facing-decorator';
+import { useRouter } from 'vue-router';
 @Component({
   components: {},
   name: 'not-found',
@@ -9,12 +9,11 @@ class NotFound extends Vue {
   // Fields
   // --------------------------------------------------------------------------
 
+  @Setup(() => useRouter())
+  public router!: ReturnType<typeof useRouter>;
   // --------------------------------------------------------------------------
   // Constructor
   // --------------------------------------------------------------------------
-  constructor() {
-    super();
-  }
 
   // --------------------------------------------------------------------------
   // Accessors
@@ -36,7 +35,4 @@ class NotFound extends Vue {
   }
 }
 
-export {
-  NotFound as default,
-  NotFound,
-};
+export { NotFound as default, NotFound };

@@ -1,7 +1,9 @@
 <style scoped lang="scss" src="./default-layout.scss"></style>
 <script lang="ts" src="./default-layout.ts"></script>
 <template>
-  <div class="[ default ][ flex flex-col ][ h-full w-full ]">
+  <div
+    class="[ default ][ flex flex-col justify-center items-center m-auto ][ h-full w-full max-w-screen-2xl ]"
+  >
     <!-- Header -->
 
     <!-- Body -->
@@ -15,7 +17,7 @@
 
     <!-- Footer -->
     <div
-      class="[ h-12 mt-auto ] [ text-start text-xs font-medium ] [ px-12 lg:px-24 ]"
+      class="[ h-12 mt-auto ] [ text-start text-xs font-medium w-full ] [ px-12 lg:px-24 ]"
     >
       💖 Developed by RD Engineering. The source code is available on
       <span class="underline-offset-1 underline"

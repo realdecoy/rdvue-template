@@ -48,7 +48,7 @@ module.exports = {
     curly: 2,
     complexity: 2,
     'max-classes-per-file': [2, 1],
-    'max-len': [1, 120],
+    'max-len': [1, 180],
     'max-lines': [1, 500],
     'new-parens': 2,
     'newline-before-return': 2,

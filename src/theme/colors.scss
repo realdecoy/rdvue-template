@@ -1,27 +1,77 @@
-/**
- * Default colors used by Tailwind in Light theme.
- */
+// Default colors (Light theme)
 :root {
-	--typography-primary: #000000;
-	--typography-secondary: #201b1b;
-	--typography-error: #ac3838;
-	--typography-success: #3fb984;
-	--typography-light: #718096;
-	--app-background: #ecf2f7;
-	--app-footer: #b3becc;
-	--border-light: #a0aec0;
-	--button-success: #74b871;
-	--button-warning: #d3782d;
-	--button-error: #ff5555;
+    --typography-primary: #000000;
+    --typography-secondary: #201b1b;
+    --typography-accent: #FFD700;
+    --typography-error: #ac3838;
+    --typography-success: #3fb984;
+    --typography-muted: #718096;
+    --typography-light: #ecf2f7;
+    
+    --app-background: #fff;
+    --app-header: #3F54CA;
+    --app-sidebar: #3F54CA;
+    --app-footer: #3F54CA;
+    
+    --button-primary: #FFD700;
+    --button-secondary: #3F54CA;
+    --button-success: #74b871;
+    --button-warning: #d3782d;
+    --button-error: #ff5555;
+    --button-disabled: #a0aec0;
+    
+    --border-light: #a0aec0;
+    --border-dark: #201b1b;
+    --border-muted: #d1d5db;
+
+    --status-info: #4a90e2;
+    --status-warning: #f39c12;
+
+    --link-primary: #FFD700;
+    --link-hover: darken(#FFD700, 10%);
+    
+    --focus-ring: #FFD700;
+    
+    --divider: #3F54CA;
+    --overlay: rgba(#000000, 0.5);
 }
 
+// Dark Theme Configurations
 .theme-color-preference {
-	/**
-   * Dark Theme.
-   * Override default colors to match theme.
-   * Also, add theme specific element styling.
-   */
-	&.dark {
-		// --typography-primary: #000;
-	}
+    &.dark {
+        --typography-primary: #FFFFFF;
+        --typography-secondary: #3F54CA;
+        --typography-accent: #FFD700;
+        --typography-error: #ff7675;
+        --typography-success: #00b894;
+        --typography-muted: #a29bfe;
+        --typography-light: #201b1b;
+        
+        --app-background: #000000;
+        --app-header: darken(#000000, 10%);
+        --app-sidebar: darken(#000000, 15%);
+        --app-footer: darken(#000000, 10%);
+        
+        --button-primary: #FFD700;
+        --button-secondary: #3F54CA;
+        --button-success: #00b894;
+        --button-warning: #e17055;
+        --button-error: #d63031;
+        --button-disabled: #636e72;
+        
+        --border-light: #3F54CA;
+        --border-dark: lighten(#000000, 10%);
+        --border-muted: #636e72;
+
+        --status-info: #0984e3;
+        --status-warning: #e17055;
+
+        --link-primary: #FFD700;
+        --link-hover: darken(#FFD700, 10%);
+        
+        --focus-ring: #FFD700;
+        
+        --divider: #3F54CA;
+        --overlay: rgba(#FFFFFF, 0.5);
+    }
 }

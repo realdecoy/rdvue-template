@@ -7,8 +7,9 @@ import { createFontAwesome, createI18n } from '@/modules/core';
 import { createMetaManager } from 'vue-meta';
 import App from './components/@app';
 import router from './config/router';
-import '@/assets/theme/@main.scss';
 import '@/modules/rdvue/components/styles';
+import 'tailwindcss/tailwind.css';
+import '@/theme/_all.scss';
 
 export const app = createApp(App);
 

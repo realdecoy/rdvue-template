@@ -8,33 +8,64 @@ module.exports = {
     },
   ],
   theme: {
-    /**
-     * Color values are defined in /src/theme/colors.scss.
-     * Color names should be sematic in order to provide
-     * contextual alignment when thinking about themes.
-     * E.g. primary-text-color (semantic) vs black-1 (literal)
-     */
     colors: {
       inherit: 'inherit',
       transparent: 'transparent',
+
+      // App related colors
       app: {
         background: 'var(--app-background)',
+        header: 'var(--app-header)',
+        sidebar: 'var(--app-sidebar)',
         footer: 'var(--app-footer)',
       },
+
+      // Typography related colors
       typography: {
         primary: 'var(--typography-primary)',
         secondary: 'var(--typography-secondary)',
+        accent: 'var(--typography-accent)',
         success: 'var(--typography-success)',
         error: 'var(--typography-error)',
+        muted: 'var(--typography-muted)',
         light: 'var(--typography-light)',
       },
+
+      // Button related colors
       button: {
+        primary: 'var(--button-primary)',
+        secondary: 'var(--button-secondary)',
         success: 'var(--button-success)',
-        failure: 'var(--button-failure)',
+        warning: 'var(--button-warning)',
+        error: 'var(--button-error)',
+        disabled: 'var(--button-disabled)',
       },
+
+      // Border related colors
       border: {
         light: 'var(--border-light)',
+        dark: 'var(--border-dark)',
+        muted: 'var(--border-muted)',
       },
+
+      // Status related colors
+      status: {
+        info: 'var(--status-info)',
+        warning: 'var(--status-warning)',
+      },
+
+      // Link related colors
+      link: {
+        primary: 'var(--link-primary)',
+        hover: 'var(--link-hover)',
+      },
+
+      // Other colors
+      focus: {
+        ring: 'var(--focus-ring)',
+      },
+      divider: 'var(--divider)',
+      overlay: 'var(--overlay)',
     },
     fontSize: {
       xs: '.75rem',

@@ -1,32 +1,3 @@
-.hello-world {
-    a, a:visited, a:active, a:link {
-        @apply text-typography-success; // vue-green
-        text-decoration: none;
-    }
-    a:hover {
-        @apply text-typography-light;
-    }
-  
-    .hello-world-content {
-        @media only screen and (max-width: 800px) {
-            grid-template-columns: 1fr;
-            grid-auto-flow: row;
-        }
-    }
-  
-    .features {
-        @media only screen and (max-width: 800px) {
-            margin-top: 2rem;
-            margin-left: 0;
-        }
-  
-        ul li::before {
-            content: "\25A0";
-            @apply text-typography-success; // vue-green
-            font-weight: bold;
-            display: inline-block; 
-            width: 1em;
-            margin-left: -1em;
-        }
-    }
-  }
+.landing{
+    padding: 20px 40px;
+}

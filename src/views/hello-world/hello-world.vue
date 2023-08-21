@@ -7,13 +7,16 @@
       <img class="h-6 w-auto" :src="rdLogo" />
     </div>
     <section
-      class="[ flex flex-col gap-12 ] [ justify-center items-center ] [ flex-grow ][ text-center ] [ px-24 ] [ h-screen ][ w-full my-12 ]"
+      id="hero"
+      class="[ flex flex-col gap-12 ] [ justify-center items-center ] [ flex-grow ][ text-center ] [ lg:px-24 ] [ h-screen ][ w-full lg:my-12 ]"
     >
-      <div class="[ tracking-wider text-6xl leading-3 font-semibold ][ ]">
+      <div
+        class="[ tracking-wider text-3xl lg:text-6xl leading-3 font-semibold ][ ]"
+      >
         RDVue
         <sup
           class="[ rounded-md px-2 py-1 bg-typography-accent tracking-wider ] [ ]"
-          ><span class="text-4xl">v</span>3</sup
+          ><span class="text-xs lg:text-4xl">v</span>3</sup
         >
       </div>
       <div>
@@ -22,7 +25,7 @@
         </h3>
       </div>
       <div>
-        <p class="[ text-typography-muted font-medium text-xl ]">
+        <p class="[ text-typography-muted font-medium text-xs lg:text-xl ]">
           The RDVUE CLI tool was designed to streamline the development of
           Frontend Applications. It ensures uniformity across projects and
           reduces the learning curve for each new project undertaken by our
@@ -32,9 +35,13 @@
       <div
         class="[ w-full flex flex-row ] [ gap-2 ] [ justify-center items-center ]"
       >
-        <button class="[ bg-button-primary px-4 py-2 rounded-md font-medium ]">
-          Features
-        </button>
+        <a href="#features">
+          <button
+            class="[ bg-button-primary px-4 py-2 rounded-md font-medium ]"
+          >
+            Features
+          </button>
+        </a>
         <button
           class="[ bg-button-secondary px-4 py-2 rounded-md font-medium text-typography-light ] [ outline-1 outline-border-dark outline ]"
         >
@@ -43,6 +50,7 @@
       </div>
     </section>
     <section
+      id="features"
       class="[ flex flex-col gap-12 ] [ justify-center items-center ] [ flex-grow ] [ h-full ][ w-full ]"
     >
       <h3 class="[ tracking-wider text-5xl leading-3 font-bold text-center ]">
@@ -50,7 +58,7 @@
       </h3>
       <div>
         <p
-          class="[ text-typography-muted font-medium text-xl text-center px-24 ]"
+          class="[ text-typography-muted font-medium text-xs lg:text-xl text-center lg:px-24 ]"
         >
           In our commitment to drive efficient and high-quality SPA development,
           the RDVUE CLI tool is packed with a suite of features and embedded
@@ -60,12 +68,12 @@
         </p>
       </div>
       <div
-        class="[ flex flex-wrap justify-items-start ] [ gap-12 ] [ items-start justify-start ][ w-full px-12 ][ font-mono ]"
+        class="[ flex lg:flex-wrap flex-col justify-items-start ] [ gap-12 ] [ items-start justify-start ][ w-full lg:px-12 ][ font-mono ]"
       >
         <div
           v-for="feature in features"
           :key="`feature-listings-${feature.id}`"
-          class="[ flex flex-col ] [ gap-2 ] [ justify-around ] [ items-start ] [ w-[21rem] h-64 ][ border border-typography-accent ][ px-6 py-6 ][ rounded-md ]"
+          class="[ flex flex-col ] [ gap-2 ] [ justify-around ] [ items-start ] [ w-full lg:w-[21rem] h-64 ][ border border-typography-accent ][ px-6 py-6 ][ rounded-md ]"
         >
           <img :src="feature.image" class="[ w-12 h-12 ]" />
           <div class="[ font-semibold ][ text-2xl ]" v-html="feature.title" />

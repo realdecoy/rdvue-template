@@ -14,7 +14,9 @@
     </div>
 
     <!-- Footer -->
-    <div class="[ h-12 mt-auto ] [ text-start text-sm font-medium ] [ px-24 ]">
+    <div
+      class="[ h-12 mt-auto ] [ text-start text-xs font-medium ] [ px-12 lg:px-24 ]"
+    >
       💖 Developed by RD Engineering. The source code is available on
       <span class="underline-offset-1 underline"
         ><a href="https://github.com/realdecoy/rdvue-template" target="_blank"

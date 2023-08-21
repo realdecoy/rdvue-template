@@ -68,7 +68,7 @@
         </p>
       </div>
       <div
-        class="[ flex lg:flex-wrap flex-col justify-items-start ] [ gap-12 ] [ items-start justify-start ][ w-full lg:px-12 ][ font-mono ]"
+        class="[ flex lg:flex-row lg:flex-wrap flex-col justify-items-start ] [ gap-12 ] [ items-start justify-start ][ w-full lg:px-12 ][ font-mono ]"
       >
         <div
           v-for="feature in features"

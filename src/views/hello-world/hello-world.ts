@@ -71,7 +71,7 @@ export default class HelloWorld extends Vue {
       description: 'Class-based component syntax for Vue 3',
       image: 'https://vuejs.org/images/logo.png',
       id: 'vue-facing-decorator',
-      link: 'https://vue-facing-decorator.netlify.app/',
+      link: 'https://facing-dev.github.io/vue-facing-decorator/#/',
     },
     {
       title: 'Sass',

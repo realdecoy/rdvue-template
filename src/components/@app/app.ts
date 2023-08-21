@@ -2,12 +2,19 @@ import { Component, Vue, Setup } from 'vue-facing-decorator';
 import { type RouteLocationNormalized, useRouter } from 'vue-router';
 import { defineAsyncComponent, shallowRef } from 'vue';
 import DefaultLayout from '@/layouts/default-layout';
+import { useMeta } from 'vue-meta';
 
 const DEFAULT_LAYOUT = 'default-layout';
 
 @Component({
   name: 'App',
   components: { DefaultLayout },
+  setup() {
+    return useMeta({
+      title: '',
+      htmlAttrs: { lang: 'en', amp: true },
+    });
+  },
 })
 export default class AppView extends Vue {
   // --------------------------------------------------------------------------

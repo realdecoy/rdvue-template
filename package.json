@@ -25,6 +25,7 @@
     "vue": "^3.2.45",
     "vue-facing-decorator": "^2.1.20",
     "vue-i18n": "^9.2.2",
+    "vue-meta": "^3.0.0-alpha.10",
     "vue-router": "^4.1.6"
   },
   "devDependencies": {

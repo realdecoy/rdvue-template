@@ -1,4 +1,4 @@
-# **__PROJECT_NAME__**
+# ****PROJECT_NAME****
 
 This template should help get you started developing with Vue 3 in Vite.
 

@@ -1,4 +1,4 @@
-# rdvue-3
+# **__PROJECT_NAME__**
 
 This template should help get you started developing with Vue 3 in Vite.
 

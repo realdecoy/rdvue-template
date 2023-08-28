@@ -11,8 +11,8 @@
       "target": "config/i18n.ts"
     },
     {
-      "source": "pages/hello-i18n/hello-i18n.vue",
-      "target": "pages/hello-i18n/hello-i18n.vue"
+      "source": "views/hello-i18n/hello-i18n.vue",
+      "target": "views/hello-i18n/hello-i18n.vue"
     },
     {
       "source": "locales/en.json",
@@ -25,7 +25,7 @@
   ],
   "packages": {
     "dependencies": [
-      "vue-i18n@8.27.2"
+      "vue-i18n@9.2.2"
     ],
     "devDependencies": [
       "vue-cli-plugin-i18n@1.0.1"
@@ -35,7 +35,7 @@
     {
       "path": "'/hello-i18n'",
       "name": "'i18nTest'",
-      "component": "`require('@/pages/hello-i18n/hello-i18n.vue').default`"
+      "component": "`require('@/views/hello-i18n/hello-i18n.vue').default`"
     }
   ],
   "vueOptions": {

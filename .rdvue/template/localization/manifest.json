@@ -51,7 +51,7 @@
   },
   "main": {
     "modules": [
-      "  i18n"
+      "i18n"
     ],
     "imports": [
       "import i18n from '@/config/i18n';"

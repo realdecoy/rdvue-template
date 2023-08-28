@@ -3,7 +3,7 @@
 
 import { createApp } from 'vue';
 import { createPinia } from 'pinia';
-import { createFontAwesome, createI18n } from '@/modules/core';
+import { createFontAwesome } from '@/modules/core';
 import { createMetaManager } from 'vue-meta';
 import App from './components/@app';
 import router from './config/router';
@@ -15,7 +15,6 @@ export const app = createApp(App);
 
 app.use(router);
 app.use(createPinia());
-app.use(createI18n());
 app.use(createFontAwesome());
 app.use(createMetaManager());
 

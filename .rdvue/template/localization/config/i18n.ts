@@ -104,3 +104,5 @@ const createI18n = () => ({
 const hasCallableModule = true;
 
 export { hasCallableModule, createI18n };
+
+export default createI18n();

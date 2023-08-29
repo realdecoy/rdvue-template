@@ -1,5 +1,5 @@
 // import MiniCssExtractPlugin from "mini-css-extract-plugin";
-
+// eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
 export const useSassLoader = (isDev: boolean) => ({
   test: /\.(?:sa|s?c)ss$/,
   use: [

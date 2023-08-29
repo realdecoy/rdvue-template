@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* tslint:disable:no-console */
 
 import { fromEnv } from '@/modules/core';
@@ -7,8 +8,7 @@ if (fromEnv('NODE_ENV') === 'production') {
   register(`${fromEnv('BASE_URL')}service-worker.js`, {
     ready() {
       console.log(`App is being served from cache by a service worker.
-For more details, visit https://goo.gl/AFskqB`,
-      );
+For more details, visit https://goo.gl/AFskqB`);
     },
     registered() {
       console.log('Service worker has been registered.');
@@ -23,7 +23,9 @@ For more details, visit https://goo.gl/AFskqB`,
       console.log('New content is available; please refresh.');
     },
     offline() {
-      console.log('No internet connection found. App is running in offline mode.');
+      console.log(
+        'No internet connection found. App is running in offline mode.'
+      );
     },
     error(error) {
       console.error('Error during service worker registration:', error);

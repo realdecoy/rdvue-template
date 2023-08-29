@@ -57,28 +57,28 @@ class BaseService {
   // Event Handlers
   // --------------------------------------------------------------------------
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars, require-await
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars, require-await, no-unused-vars
   protected async onRequest(config: AxiosRequestConfig) {
     throw new Error(
       `Abstract method [onRequest] not implemented in class [${this.constructor.name}]`
     );
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars, require-await
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars, require-await, no-unused-vars
   protected async onRequestError(error: unknown) {
     throw new Error(
       `Abstract method [onRequestError] not implemented in class [${this.constructor.name}]`
     );
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars, require-await
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars, require-await, no-unused-vars
   protected async onResponse(response: AxiosResponse) {
     throw new Error(
       `Abstract method [onResponse] not implemented in class [${this.constructor.name}]`
     );
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars, require-await
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars, require-await, no-unused-vars
   protected async onResponseError(error: unknown) {
     throw new Error(
       `Abstract method [onResponseError] not implemented in class [${this.constructor.name}]`

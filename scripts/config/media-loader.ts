@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
 export const useMediaLoader = (isDev: boolean) => ({
   test: /\.(png|jpe?g|gif|webm|mp4|svg)$/,
   loader: 'file-loader',

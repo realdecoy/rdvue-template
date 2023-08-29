@@ -33,6 +33,3 @@ const mergedEnv = merge([env, IS_DEV ? envDev : envProd]) as Env;
 // Module Exports
 // ----------------------------------------------------------------------------
 export { mergedEnv as default, IS_DEV };
-
-// Optional: If you want to test the loading of the environment variable
-console.log('Test load API_TIMEOUT_MS value is: ', VITE_API_TIMEOUT_MS);

@@ -42,11 +42,16 @@
             Features
           </button>
         </a>
-        <button
-          class="[ bg-button-secondary px-4 py-2 rounded-md font-medium text-typography-light ] [ outline-1 outline-border-dark outline ]"
+        <a
+          href="https://frontier.realdecoy.com/vue/introduction/whats-frontier-vue"
+          target="_blank"
         >
-          Documentation
-        </button>
+          <button
+            class="[ bg-button-secondary px-4 py-2 rounded-md font-medium text-typography-light ] [ outline-1 outline-border-dark outline ]"
+          >
+            Documentation
+          </button>
+        </a>
       </div>
     </section>
     <section

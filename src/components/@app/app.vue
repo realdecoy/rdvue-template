@@ -8,7 +8,7 @@ import type { RouterView } from 'vue-router';
       content ? `${content}` : `RDVue Template`
     }}</template>
   </metainfo>
-  <div class="app">
+  <div class="[ app ][ grid ][ h-full w-full ]">
     <Suspense>
       <component :is="layout">
         <RouterView></RouterView>

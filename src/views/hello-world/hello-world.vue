@@ -1,4 +1,3 @@
-<style lang="scss" src="./hello-world.scss" />
 <script lang="ts" src="./hello-world.ts" />
 <template>
   <div class="[ landing ] [ h-full w-full ] [ flex flex-col ]">
@@ -97,3 +96,9 @@
     </section>
   </div>
 </template>
+
+<style lang="scss">
+.landing{
+  padding: 20px 40px;
+}
+</style>

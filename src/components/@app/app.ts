@@ -1,7 +1,7 @@
 import { Component, Vue, Setup } from 'vue-facing-decorator';
 import { type RouteLocationNormalized, useRouter } from 'vue-router';
 import { defineAsyncComponent, shallowRef } from 'vue';
-import DefaultLayout from '@/layouts/default-layout';
+import DefaultLayout from '@/layouts/default-layout/default-layout.vue';
 import { useMeta } from 'vue-meta';
 
 const DEFAULT_LAYOUT = 'default-layout';
@@ -37,11 +37,12 @@ export default class AppView extends Vue {
   public loadLayout(route: RouteLocationNormalized) {
     const meta = route.meta as { layout?: string } | undefined;
     const { layout: newLayout = DEFAULT_LAYOUT } = meta ?? {};
+    const layoutFolder = newLayout;
 
     return defineAsyncComponent(
       // Disable warning by vite compiler for dynamic import below.
       // eslint-disable-next-line prefer-template
-      () => import(/* @vite-ignore */ '@/layouts/' + newLayout)
+      () => import(/* @vite-ignore */ '@/layouts/' + layoutFolder + newLayout + '.vue')
     );
   }
 

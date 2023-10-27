@@ -1,4 +1,3 @@
-<style scoped lang="scss" src="./default-layout.scss"></style>
 <script lang="ts" src="./default-layout.ts"></script>
 <template>
   <div
@@ -28,3 +27,10 @@
     </div>
   </div>
 </template>
+
+<style scoped lang="scss">
+.default {
+  // Write your styles here
+  grid-template-rows: auto 1fr auto;
+}
+</style>

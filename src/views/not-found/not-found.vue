@@ -1,4 +1,3 @@
-<style scoped lang="scss" src="./not-found.scss"></style>
 <script lang="ts" src="./not-found.ts"></script>
 <template>
   <div class="[ not-found grid justify-items-center items-center ][ h-screen ]">

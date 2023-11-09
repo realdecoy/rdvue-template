@@ -10,8 +10,15 @@ import router from './config/router';
 import '@/modules/rdvue/components/styles';
 import 'tailwindcss/tailwind.css';
 import '@/theme/_all.scss';
+import * as Sentry from "@sentry/vue";
+import { SENTRY_DSN } from '@/config/env';
 
 export const app = createApp(App);
+
+Sentry.init({
+  app,
+  dsn: SENTRY_DSN,
+});
 
 app.use(router);
 app.use(createPinia());

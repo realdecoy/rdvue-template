@@ -1,0 +1,37 @@
+{
+  "version": 2,
+  "name": "sentry",
+  "group": false,
+  "description": "Add Sentry for comprehensive monitoring and tracking of errors and events within your application",
+  "sourceDirectory": "./",
+  "installDirectory": "./",
+  "files": [
+    {
+      "source": "./sentry.ts",
+      "target": "config/sentry.ts"
+    }
+  ],
+  "packages": {
+    "dependencies": [
+      "@sentry/vue@7.80.0"
+    ],
+    "devDependencies": []
+  },
+  "routes": [],
+  "vueOptions": {},
+  "modules": {},
+  "env": [
+    {
+      "key": "PUBLIC_SENTRY_DSN",
+      "value": "__SENTRY_DSN__"
+    }
+  ],
+  "main": {
+    "modules": [
+      "initializeSentry(app);"
+    ],
+    "imports": [
+      "import { initializeSentry } from '@/config/sentry';"
+    ]
+  }
+}

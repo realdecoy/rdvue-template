@@ -10,10 +10,9 @@ type Env = typeof env & typeof envDev & typeof envProd;
 // ----------------------------------------------------------------------------
 // Module Vars
 // ----------------------------------------------------------------------------
-const { NODE_ENV, VITE_API_TIMEOUT_MS, VITE_APP_DEFAULT_LOCALE, PUBLIC_SENTRY_DSN } = import.meta
+const { NODE_ENV, VITE_API_TIMEOUT_MS, VITE_APP_DEFAULT_LOCALE } = import.meta
   .env;
 const IS_DEV = NODE_ENV !== 'production';
-const SENTRY_DSN = PUBLIC_SENTRY_DSN;
 
 const env = {
   // Add non-environment specific defaults here
@@ -33,4 +32,4 @@ const mergedEnv = merge([env, IS_DEV ? envDev : envProd]) as Env;
 // ----------------------------------------------------------------------------
 // Module Exports
 // ----------------------------------------------------------------------------
-export { mergedEnv as default, IS_DEV, SENTRY_DSN };
+export { mergedEnv as default, IS_DEV };

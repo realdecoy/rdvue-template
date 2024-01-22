@@ -1,0 +1,9 @@
+{
+  "name": "@rdvue/button",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "class-variance-authority": "^0.7.0",
+    "radix-vue": "^1.2.6"
+  }
+}

@@ -1,0 +1,297 @@
+.calendar {
+  @apply p-3 text-center;
+
+  .vc-pane-layout {
+    @apply grid gap-4;
+  }
+
+  .vc-title {
+    @apply text-sm tracking-normal text-primary uppercase font-bold z-50;
+  }
+
+  .vc-pane-header-wrapper {
+    @apply hidden;
+  }
+
+  .vc-weeks {
+    @apply mt-4;
+  }
+
+  .vc-weekdays {
+    @apply flex;
+  }
+
+  .vc-weekday {
+    @apply text-muted-foreground rounded-md w-9 font-normal text-[0.8rem];
+  }
+
+  .vc-weeks {
+    @apply w-full space-y-2 flex flex-col [&>_div]:grid [&>_div]:grid-cols-7;
+  }
+
+  .vc-day:has(.vc-highlights) {
+    @apply bg-white first:rounded-l-md last:rounded-r-md overflow-hidden;
+  }
+
+  .vc-day.is-today:not(:has(.vc-day-layer)) {
+    .vc-day-content {
+      @apply bg-transparent outline-primary outline outline-1;
+    }
+  }
+
+  .vc-day:has(.vc-highlight-base-start) {
+    @apply rounded-l-md;
+  }
+
+  .vc-day:has(.vc-highlight-base-end) {
+    @apply rounded-r-md;
+  }
+
+  .vc-day:has(.vc-highlight-bg-secondary):not(
+      :has(.vc-highlight-base-start)
+    ):not(:has(.vc-highlight-base-end)) {
+    @apply rounded-md;
+  }
+
+  .vc-day-content {
+    @apply text-center text-sm p-0 relative focus-within:relative focus-within:z-20 inline-flex items-center justify-center ring-offset-background hover:transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 hover:bg-primary/50 hover:text-white h-9 w-9 font-normal aria-selected:opacity-100 select-none;
+  }
+
+  .vc-day-content:not(.vc-highlight-content-light) {
+    @apply rounded-md;
+  }
+
+  .is-not-in-month:not(:has(.vc-highlight-content-solid)):not(
+      :has(.vc-highlight-content-light)
+    ):not(:has(.vc-highlight-content-outline)),
+  .vc-disabled {
+    @apply text-muted-foreground opacity-50;
+  }
+
+  .vc-highlight-content-solid,
+  .vc-highlight-content-outline {
+    @apply bg-primary text-primary-foreground hover:bg-primary hover:text-white  focus:bg-primary focus:text-primary-foreground;
+  }
+
+  .vc-highlight-content-light {
+    @apply bg-primary/50 w-full text-white;
+  }
+
+  .vc-pane-container.in-transition {
+    @apply overflow-hidden;
+  }
+
+  .vc-pane-container {
+    @apply w-full relative;
+  }
+
+  :root {
+    --vc-slide-translate: 22px;
+    --vc-slide-duration: 0.15s;
+    --vc-slide-timing: ease;
+  }
+
+  .vc-fade-enter-active,
+  .vc-fade-leave-active,
+  .vc-slide-left-enter-active,
+  .vc-slide-left-leave-active,
+  .vc-slide-right-enter-active,
+  .vc-slide-right-leave-active,
+  .vc-slide-up-enter-active,
+  .vc-slide-up-leave-active,
+  .vc-slide-down-enter-active,
+  .vc-slide-down-leave-active,
+  .vc-slide-fade-enter-active,
+  .vc-slide-fade-leave-active {
+    transition:
+      opacity var(--vc-slide-duration) var(--vc-slide-timing),
+      -webkit-transform var(--vc-slide-duration) var(--vc-slide-timing);
+    transition:
+      transform var(--vc-slide-duration) var(--vc-slide-timing),
+      opacity var(--vc-slide-duration) var(--vc-slide-timing);
+    transition:
+      transform var(--vc-slide-duration) var(--vc-slide-timing),
+      opacity var(--vc-slide-duration) var(--vc-slide-timing),
+      -webkit-transform var(--vc-slide-duration) var(--vc-slide-timing);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    pointer-events: none;
+  }
+
+  .vc-none-leave-active,
+  .vc-fade-leave-active,
+  .vc-slide-left-leave-active,
+  .vc-slide-right-leave-active,
+  .vc-slide-up-leave-active,
+  .vc-slide-down-leave-active {
+    position: absolute !important;
+    width: 100%;
+  }
+
+  .vc-none-enter-from,
+  .vc-none-leave-to,
+  .vc-fade-enter-from,
+  .vc-fade-leave-to,
+  .vc-slide-left-enter-from,
+  .vc-slide-left-leave-to,
+  .vc-slide-right-enter-from,
+  .vc-slide-right-leave-to,
+  .vc-slide-up-enter-from,
+  .vc-slide-up-leave-to,
+  .vc-slide-down-enter-from,
+  .vc-slide-down-leave-to,
+  .vc-slide-fade-enter-from,
+  .vc-slide-fade-leave-to {
+    opacity: 0;
+  }
+
+  .vc-slide-left-enter-from,
+  .vc-slide-right-leave-to,
+  .vc-slide-fade-enter-from.direction-left,
+  .vc-slide-fade-leave-to.direction-left,
+  .vc-slide-right-enter-from,
+  .vc-slide-left-leave-to,
+  .vc-slide-fade-enter-from.direction-right,
+  .vc-slide-fade-leave-to.direction-right,
+  .vc-slide-up-enter-from,
+  .vc-slide-down-leave-to,
+  .vc-slide-fade-enter-from.direction-top,
+  .vc-slide-fade-leave-to.direction-top,
+  .vc-slide-down-enter-from,
+  .vc-slide-up-leave-to,
+  .vc-slide-fade-enter-from.direction-bottom,
+  .vc-slide-fade-leave-to.direction-bottom {
+    -webkit-transform: translate(var(--vc-slide-translate));
+    transform: translate(var(--vc-slide-translate));
+  }
+}
+
+/**
+   * Timepicker styles
+   */
+.vc-time-picker {
+  @apply flex flex-col items-center p-2;
+
+  &.vc-invalid {
+    @apply opacity-50;
+  }
+
+  &.vc-attached {
+    @apply border-t border-solid border-secondary mt-2;
+  }
+
+  > * + * {
+    @apply mt-1;
+  }
+
+  .vc-time-header {
+    @apply flex items-center text-sm font-semibold uppercase mt-1 px-1 leading-6;
+  }
+
+  .vc-time-select-group {
+    @apply inline-flex items-center px-1 rounded-md bg-primary/50 text-white border border-solid border-secondary;
+
+    .vc-base-icon {
+      @apply mr-1 text-primary stroke-primary;
+    }
+
+    select {
+      @apply bg-primary/50 p-1 appearance-none outline-none text-center;
+    }
+  }
+
+  .vc-time-weekday {
+    @apply text-muted-foreground tracking-wide;
+  }
+
+  .vc-time-month {
+    @apply text-primary ml-2;
+  }
+
+  .vc-time-day {
+    @apply text-primary ml-1;
+  }
+
+  .vc-time-year {
+    @apply text-muted-foreground ml-2;
+  }
+
+  .vc-time-colon {
+    @apply mb-0.5;
+  }
+
+  .vc-time-decimal {
+    @apply ml-0.5;
+  }
+}
+
+/**
+  * Popover styles
+  */
+
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+
+@mixin focus-style {
+  @apply focus:outline-none focus:ring focus:border-primary;
+}
+
+// Mixin for active styling
+@mixin active-style {
+  @apply bg-primary text-white;
+}
+
+.vc-popover-content {
+  @apply bg-white rounded-lg shadow-lg max-w-xs;
+  opacity: 0;
+  transform: translateY(-20px);
+
+  // Animation properties
+  animation-name: fadeInDown;
+  animation-duration: 0.1s;
+  animation-fill-mode: forwards; // Keeps the end state after animation completes
+  animation-timing-function: ease-out;
+  animation-delay: 0s;
+
+  .vc-nav-container {
+    @apply flex flex-col;
+
+    .vc-nav-header {
+      @apply flex justify-between items-center p-4 border-b border-gray-200;
+
+      .vc-nav-title {
+        @apply text-primary hover:bg-primary/50 hover:text-white p-2 rounded transition duration-150 ease-in-out;
+      }
+      .vc-nav-arrow {
+        @apply hover:bg-primary/50 text-primary fill-primary hover:fill-white p-1 rounded transition duration-150 ease-in-out;
+       
+      }
+    }
+
+    .vc-nav-items {
+      @apply flex flex-wrap justify-between gap-2 p-2;
+
+      .vc-nav-item {
+        @apply text-gray-700 hover:bg-gray-100 p-2 rounded transition duration-150 ease-in-out;
+        @include focus-style;
+
+        &.is-active {
+          @include active-style;
+        }
+      }
+    }
+  }
+
+  .vc-popover-caret {
+    @apply bg-primary transform rotate-45 top-1;
+  }
+}

@@ -1,0 +1,1 @@
+export {default as PopoverTrigger} from './r-popover-trigger.vue'

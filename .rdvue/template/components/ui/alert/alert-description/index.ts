@@ -1,0 +1,1 @@
+export {default as AlertDescription} from './r-alert-description.vue';

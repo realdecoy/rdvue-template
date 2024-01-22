@@ -1,0 +1,9 @@
+{
+  "name": "@rdvue/form",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "vee-validate": "^4.12.4",
+    "radix-vue": "^1.2.6"
+  }
+}

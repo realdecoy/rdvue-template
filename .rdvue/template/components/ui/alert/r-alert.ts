@@ -1,6 +1,6 @@
 import { Component, Prop, Vue, Setup, toNative } from 'vue-facing-decorator';
 import { alertVariants } from '.';
-import { cn } from '@/lib/utils';
+import { cn } from '@/components/lib/utils';
 
 interface AlertProps {
   variant?: NonNullable<Parameters<typeof alertVariants>[0]>['variant'];

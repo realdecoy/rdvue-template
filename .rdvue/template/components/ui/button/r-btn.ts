@@ -3,7 +3,7 @@ import { Component, Prop, Setup, Vue, toNative } from 'vue-facing-decorator';
 import { defineComponent } from 'vue';
 import { Primitive, type PrimitiveProps } from 'radix-vue';
 import { buttonVariants } from '.';
-import { cn } from '@/lib/utils';
+import { cn } from '@/components/lib/utils';
 import icon from '../icon';
 export interface ButtonProps extends PrimitiveProps {
   variant?: NonNullable<Parameters<typeof buttonVariants>[0]>['variant'];

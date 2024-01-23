@@ -1,7 +1,7 @@
 import { Component, toNative, Setup, Vue } from 'vue-facing-decorator';
 import { provide, useAttrs } from 'vue'
 import { useId } from 'radix-vue'
-import { cn } from '@/lib/utils'
+import { cn } from '@/components/lib/utils'
 import { FORM_ITEM_INJECTION_KEY } from '../interface';
 
 @Component({

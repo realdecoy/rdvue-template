@@ -1,7 +1,7 @@
 import { Component, Prop, Setup, Vue, toNative } from 'vue-facing-decorator'
 import { ToggleGroupItem as RadixToggleGroupItem, useForwardPropsEmits } from 'radix-vue'
 import { useAttrs, ref } from 'vue'
-import { cn } from '@/lib/utils'
+import { cn } from '@/components/lib/utils'
 
 @Component({
     name: 'r-toggle-group-item',

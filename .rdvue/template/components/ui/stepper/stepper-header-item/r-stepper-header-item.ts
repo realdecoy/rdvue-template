@@ -1,6 +1,6 @@
 import { Component, toNative, Vue, Setup, Prop } from 'vue-facing-decorator';
 import { useStepperState } from '../useStepperState';
-import { cn } from '@/lib/utils';
+import { cn } from '@/components/lib/utils';
 
 @Component({
     name: 'r-stepper-item',

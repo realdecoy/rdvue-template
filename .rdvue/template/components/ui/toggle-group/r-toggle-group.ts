@@ -2,7 +2,7 @@ import { Component, Emit, Prop, Setup, Vue, toNative } from 'vue-facing-decorato
 import { ToggleGroupRoot as RadixToggleGroupRoot, useForwardPropsEmits } from 'radix-vue'
 import type { ToggleGroupRootEmits } from 'radix-vue'
 import { useAttrs } from 'vue'
-import { cn } from '@/lib/utils'
+import { cn } from '@/components/lib/utils'
 
 @Component({
     name: 'r-toggle-group-root',

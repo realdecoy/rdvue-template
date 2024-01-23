@@ -10,7 +10,7 @@ import {
 import { useProvideCarousel } from './useCarousel';
 import type { CarouselEmits, CarouselProps } from './interface';
 import type { EmblaCarouselType as CarouselApi } from 'embla-carousel';
-import { cn } from '@/lib/utils';
+import { cn } from '@/components/lib/utils';
 
 @Component({
   name: 'r-carousel',

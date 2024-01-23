@@ -1,7 +1,7 @@
 import { Component, toNative, Setup, Vue } from 'vue-facing-decorator';
 import { Label, type LabelProps } from 'radix-vue';
 import { useFormField } from '../useFormField';
-import { cn } from '@/lib/utils';
+import { cn } from '@/components/lib/utils';
 import { useAttrs } from 'vue';
 
 @Component({

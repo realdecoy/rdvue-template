@@ -1,6 +1,6 @@
 import { Component, toNative, Vue, Prop, Setup, Ref } from 'vue-facing-decorator';
 import { useCarousel } from '../useCarousel';
-import { cn } from '@/lib/utils';
+import { cn } from '@/components/lib/utils';
 @Component({
   name: 'r-carousel-content',
 })

@@ -7,7 +7,7 @@ import {
     Emit,
 } from 'vue-facing-decorator';
 import { useProvideStepper } from './useStepperState';
-import { cn } from '@/lib/utils';
+import { cn } from '@/components/lib/utils';
 import { StepProps } from './interface';
 import * as z from 'zod';
 

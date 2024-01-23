@@ -4,7 +4,7 @@ import {
 import { DatePicker } from 'v-calendar'
 import icon from '../icon'
 import { buttonVariants } from '../button'
-import { cn } from '@/lib/utils'
+import { cn } from '@/components/lib/utils'
 import { z } from 'zod'
 
 const simpleDatePartsSchema = z.object({

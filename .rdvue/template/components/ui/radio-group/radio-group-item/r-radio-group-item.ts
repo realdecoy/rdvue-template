@@ -1,6 +1,6 @@
 import { Component, Vue, toNative } from "vue-facing-decorator";
 import {RadioGroupIndicator, RadioGroupItem as RadixGroupItem} from 'radix-vue'
-import { cn } from "@/lib/utils";
+import { cn } from "@/components/lib/utils";
 import icon from "../../icon";
 
 @Component({

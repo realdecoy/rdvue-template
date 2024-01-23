@@ -1,7 +1,7 @@
 import { Component, toNative, Setup, Vue, Watch } from 'vue-facing-decorator';
 import { EmblaCarouselType as CarouselApi } from 'embla-carousel';
 import { useCarousel } from '../useCarousel';
-import { cn } from '@/lib/utils';
+import { cn } from '@/components/lib/utils';
 
 @Component({
   name: 'r-carousel-item',

@@ -1,5 +1,5 @@
 import { Component, Vue, Setup, toNative } from "vue-facing-decorator";
-import { cn } from "@/lib/utils";
+import { cn } from "@/components/lib/utils";
 import { RadioGroupRoot, useForwardPropsEmits } from "radix-vue";
 
 

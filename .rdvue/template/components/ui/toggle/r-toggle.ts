@@ -1,5 +1,5 @@
 import { Component, Emit, Prop, Setup, Vue, toNative } from 'vue-facing-decorator'
-import { cn } from '@/lib/utils'
+import { cn } from '@/components/lib/utils'
 import { toggleVariants } from '.'
 import type { VariantProps } from 'class-variance-authority'
 import type { ToggleProps } from 'radix-vue'

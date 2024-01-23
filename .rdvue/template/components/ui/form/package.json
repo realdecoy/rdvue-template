@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "vee-validate": "^4.12.4",
-    "radix-vue": "^1.2.6"
+    "radix-vue": "^1.2.6",
+    "vue-facing-decorator": "^3.0.4"
   }
 }

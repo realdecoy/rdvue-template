@@ -1,0 +1,1 @@
+export {default as AccordionContent} from "./r-accordion-content.vue";

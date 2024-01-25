@@ -1,0 +1,9 @@
+{
+  "name": "@rdvue/accordion",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "vue-facing-decorator": "^3.0.4",
+    "radix-vue": "^1.2.6"
+  }
+}

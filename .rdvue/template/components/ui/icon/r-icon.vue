@@ -1,8 +1,5 @@
 <script lang="ts" src="./r-icon.ts"></script>
 <template>
-  <component
-    :is="icon"
-    :default-class="defaultClass"
-  />
+  <IconifyIcon :icon="icon" :class="cn('r-icon', $attrs.class || '')" />
 </template>
 ./r-icon.js./r-icon.js

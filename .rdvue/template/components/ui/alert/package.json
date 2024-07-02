@@ -1,0 +1,9 @@
+{
+  "name": "@rdvue/alert",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "class-variance-authority": "^0.7.0",
+    "vue-facing-decorator": "^3.0.4"
+  }
+}

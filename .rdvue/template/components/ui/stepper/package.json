@@ -1,0 +1,10 @@
+{
+  "name": "@rdvue/stepper",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "@vueuse/core": "^10.7.2",
+    "zod": "^3.22.4",
+    "vue-facing-decorator": "^3.0.4"
+  }
+}

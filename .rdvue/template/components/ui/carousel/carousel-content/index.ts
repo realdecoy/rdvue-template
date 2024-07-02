@@ -1,0 +1,1 @@
+export {default as CarouselContent} from './r-carousel-content.vue'

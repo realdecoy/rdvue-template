@@ -1,0 +1,1 @@
+export {default as CardTitle} from './r-card-title.vue';

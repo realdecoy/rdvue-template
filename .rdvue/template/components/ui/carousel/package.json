@@ -1,0 +1,11 @@
+{
+  "name": "@rdvue/carousel",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "embla-carousel": "^8.0.0-rc19",
+    "embla-carousel-vue": "^8.0.0-rc19",
+    "@vueuse/core": "^10.7.2",
+    "vue-facing-decorator": "^3.0.4"
+  }
+}

@@ -1,0 +1,1 @@
+export {default as FormMessage} from './r-form-message.vue';

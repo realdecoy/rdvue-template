@@ -1,0 +1,1 @@
+export {default as CardDescription} from './r-card-description.vue';

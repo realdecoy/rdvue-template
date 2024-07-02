@@ -1,0 +1,1 @@
+export {default as FormLabel} from './r-form-label.vue';

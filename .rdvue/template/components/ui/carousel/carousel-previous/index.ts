@@ -1,0 +1,1 @@
+export { default as CarouselPrev } from './r-carousel-prev.vue'

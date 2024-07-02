@@ -1,0 +1,9 @@
+{
+  "name": "@rdvue/icon",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "@iconify/vue": "^4.1.1",
+    "vue-facing-decorator": "^3.0.4"
+  }
+}
